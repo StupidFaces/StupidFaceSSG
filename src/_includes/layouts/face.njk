@@ -21,8 +21,9 @@
                         {% endif %}
                     </li>
                     <li class="h-8 flex">Face of the Month:
+                        {% set count = faceOfTheMonth | getFaceOfTheMonthCount %}
+                        {% if not count %}<div class="ml-2">-</div>{% endif %}
                         <div class="pl-2 flex h-2 text-red-800 text-2xl">
-                            {% set count = faceOfTheMonth | getFaceOfTheMonthCount %}
                             {% if count >= 1 %}<div class="w-1 transform rotate-6">l</div>{% endif %}
                             {% if count >= 2 %}<div class="w-1 -mt-0.5 transform -rotate-3">l</div>{% endif %}
                             {% if count >= 3 %}<div class="w-1 transform -rotate-6">l</div>{% endif %}

@@ -27,7 +27,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [{
                 from: path.resolve(__dirname, 'public'),
-                to: path.resolve(__dirname, '_site')
+                to: path.resolve(__dirname, '_site'),
             }],
         }),
         new MiniCssExtractPlugin({
