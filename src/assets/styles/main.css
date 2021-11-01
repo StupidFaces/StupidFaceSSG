@@ -1,0 +1,107 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.content {
+    @apply tracking-wider leading-8 text-xl;
+}
+
+.content p {
+    @apply my-5;
+}
+
+.content h1 {
+    @apply text-5xl font-bold mt-12 mb-5 leading-10;
+}
+
+.content h2 {
+    @apply text-4xl font-bold mt-10 mb-5;
+}
+
+.content h3 {
+    @apply text-3xl font-bold mt-10 mb-5;
+}
+
+.content h4 {
+    @apply text-2xl font-bold mt-10 mb-5;
+}
+
+.content h5 {
+    @apply text-xl font-bold mt-10 mb-5;
+}
+
+.content h6 {
+    @apply text-lg font-bold mt-10 mb-5;
+}
+
+.content ul,
+.content ol,
+.content p {
+    @apply overflow-auto;
+}
+
+.content > div > ul,
+.content > div > ol {
+    @apply my-6;
+}
+
+.content ul,
+.content ol {
+    @apply pl-8;
+}
+
+.content ul {
+    @apply list-outside list-disc;
+}
+
+.content ol {
+    @apply list-outside list-decimal;
+}
+
+.content pre[class*='language-'] {
+    @apply my-8;
+}
+
+.content table {
+    @apply whitespace-nowrap my-8 border-collapse block overflow-auto;
+}
+
+.content th,
+.content td {
+    @apply border px-8 py-4;
+}
+
+.content th {
+    @apply bg-gray-100;
+}
+
+.nav-icon {
+    filter: grayscale(100%);
+}
+
+.nav-icon:hover {
+    filter: none;
+}
+
+.field {
+    @apply border py-2 px-3;
+}
+
+.field-label {
+    @apply uppercase text-lg mb-2;
+}
+
+.field-group {
+    @apply flex flex-col;
+}
+
+.template-rows-min-content {
+    grid-template-rows: min-content;
+}
+
+.text-link {
+    @apply underline;
+    @apply hover:text-gray-900;
+}

@@ -1,0 +1,5 @@
+{
+    "layout": "layouts/face.njk",
+    "tags": "faces",
+    "permalink": "{{ page.fileSlug }}/index.html"
+}

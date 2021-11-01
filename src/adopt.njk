@@ -1,0 +1,131 @@
+---
+permalink: 'adopt/index.html'
+title: Adopt Face
+---
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+    <div class="grid gap-4 grid-cols-1 md:grid-cols-2 mt-4">
+        <div>
+            <div class="text-lg">
+                <div class="mb-10">
+                    <h2 class="font-semibold">Adopt your Stupid Face!</h2>
+                    <p>If you are the holder of an unnamed Stupid Face you can use this form to give it a name used on this website only!</p>
+                </div>
+            </div>
+            <form class="w-full" name="contact" method="POST" data-netlify="true">
+                <div class=" mb-8">
+                    <div class=" mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                               for="grid-first-name">
+                            Your Twitter, Discord, Telegram or Email address:
+                        </label>
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
+                               id="grid-first-name" type="text" placeholder="e.g. twitter.com/moststupidfaces">
+                        <p class="text-gray-600 text-xs italic">Used to verify that you're the holder of the
+                            corresponding
+                            Stupid Face NFT.</p>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <div class="mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                               for="grid-state">
+                            Your Face:
+                        </label>
+                        <div class="relative mb-2">
+                            <select id="faceSelector" onchange="onFaceSelect(this.selectedOptions)" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    id="grid-state">
+                                <option disabled selected>Select your Face</option>
+                                {% for face in collections.faces %}
+                                    {% if not face.data.adoptionName %}
+                                        <option value="{{ face.data.asaId }}" data-ipfs="{{ face.data.ipfs }}" data-face-url="{{ face.url }}">{{ face.data.title }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 20 20">
+                                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-xs italic">Only unnamed Stupid Faces can be selected.</p>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <div class="mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                               for="grid-first-name">
+                            Your Face's new Name:
+                        </label>
+                        <input class="w-full appearance-none block bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
+                               id="grid-first-name" type="text" placeholder="e.g. Forest">
+                        <p class="text-gray-600 text-xs italic">Solely used on this website - won't affect Blockchain! Insults, web and wallet address will be ignored. It may take take up 48h hours until change takes place.</p>
+                    </div>
+                </div>
+
+                <div class=" mb-8">
+                    <div class="mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                               for="grid-first-name">
+                            Adopter's Name (optional):
+                        </label>
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
+                               id="grid-first-name" type="text" placeholder="e.g. Jane">
+                        <p class="text-gray-600 text-xs italic">Will be displayed on Face's detail page if given.</p>
+                    </div>
+                </div>
+
+                <div class=" mb-8">
+                    <div class="w-full mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                               for="grid-first-name">
+                            Adopter's Webaddress (optional):
+                        </label>
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
+                               id="grid-first-name" type="text" placeholder="e.g. www.jane.com">
+                        <p class="text-gray-600 text-xs italic">Used to put a link behind adopter's name if given.</p>
+                    </div>
+                </div>
+
+                <button type="submit" class="bg-gray-900 w-full text-white rounded py-3 px-6 transform hover:bg-gray-700 transition-all tracking-wider">ADOPT</button>
+            </form>
+        </div>
+        <div id="selectedFace" class="w-full" style="aspect-ratio: 1 / 1;">
+        </div>
+    </div>
+
+    <script>
+        function onFaceSelect(selectedOption) {
+            var selectedOptionData = selectedOption[0];
+            var faceDiv = document.getElementById('selectedFace');
+            faceDiv.innerHTML = `<div class="h-full w-full grid items-center justify-center"><img class="animate-spin h-24 w-24 rounded-full" src="/logo800x800.png"></div>`;
+            preloadImage(selectedOptionData);
+        }
+
+        function preloadImage(selectedOption) {
+            var imageUrl = `https://${selectedOption.dataset.ipfs}.ipfs.infura-ipfs.io`;
+            var title = selectedOption.innerHTML;
+            var img = new Image();
+            img.src = imageUrl;
+            img.onload = () => {
+                var faceDiv = document.getElementById('selectedFace');
+                faceDiv.innerHTML = `<a href="${selectedOption.dataset.faceUrl}" class="block transform hover:scale-105 transition-all hover:shadow-lg"><img title="${title}" alt="${title}" src="${img.src}"/></a>`;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            var params = new URLSearchParams(window.location.search);
+            var assetId = params.get('asset');
+            if (assetId) {
+                var faceSelector = document.getElementById('faceSelector');
+                faceSelector.value = assetId;
+                faceSelector.dispatchEvent(new Event('change'))
+            }
+        });
+    </script>
+
+{% endblock %}
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ site.description }}"/>
+    <meta name="author" content="{{ site.author }}"/>
+    <meta property="og:title" content="{{ title }}"/>
+    <meta property="og:description" content="{{ site.description }}"/>
+    <meta property="og:locale" content="{{ site.locale }}"/>
+    <meta property="og:site_name" content="{{ site.site_name }}"/>
+    {% include 'layouts/webpack.njk' %}
+    {% if page.url == "/" %}
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <script>
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on('init', (user) => {
+                    if (!user) {
+                        window.netlifyIdentity.on('login', () => {
+                            document.location.href = '/admin/';
+                        });
+                    }
+                });
+            }
+        </script>
+    {% endif %}
+</head>
+
+<body class="antialiased w-full text-gray-700 bg-gray-50 h-full overflow-y-scroll">
+<div class="max-w-screen-lg px-3 mx-auto h-full grid template-rows-min-content ">
+    <div class="">
+        <div class="pt-16 pb-12">
+            <h1 class="font-semibold text-3xl text-center text-gray-800">
+                {% block title %}
+                    {{ title if title else site.title }}
+                {% endblock %}
+            </h1>
+        </div>
+        <nav class="flex flex-wrap text-xl border-b border-gray-300 pb-0.5">
+            <ul class="flex">
+                <li class="mr-6">
+                    <a class="text-gray-700 border-none hover:text-gray-800" href="/">
+                        Home
+                    </a>
+                </li>
+                <li class="mr-6">
+                    <a class="text-gray-700 border-none hover:text-gray-800" href="/adopt">
+                        Adopt
+                    </a>
+                </li>
+                <li class="mr-6">
+                    <a class="text-gray-700 border-none hover:text-gray-800" href="/about">
+                        About
+                    </a>
+                </li>
+            </ul>
+            <ul class="flex ml-auto">
+                <li class="mr-6 flex">
+                    <a class="flex items-center" title="Stupid Faces on Twitter" target="_blank" href="https://twitter.com/moststupidfaces">
+                        <img class="nav-icon h-5 w-5" src="/assets/images/twitter-logo.png">
+                    </a>
+                </li>
+                <li class="mr-6 flex">
+                    <a class="flex items-center" title="Stupid Faces on AB2 Gallery" target="_blank" href="https://ab2.gallery/u/stupid+faces">
+                        <img class="nav-icon h-5 w-5" src="/assets/images/ab2-logo.png">
+                    </a>
+                </li>
+                <li class="mr-6 flex">
+                    <a class="flex items-center" title="Stupid Faces on NFTExplorer" target="_blank" href="https://www.nftexplorer.app/collection?creator=KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q">
+                        <img class="nav-icon rounded-3xl h-5 w-5" src="/assets/images/nft-explorer-logo.png">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="mt-4 mb-16">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <div class="border-t border-gray-300 text-center py-8 mt-auto">
+        made by grex
+    </div>
+</div>
+</body>
+</html>

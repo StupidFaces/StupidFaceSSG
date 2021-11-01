@@ -1,0 +1,47 @@
+
+{% extends 'layouts/base.njk' %}
+
+{% block title %}
+    {{ title }}{% if adoptionName %}: {{ adoptionName }}{% endif %}
+{% endblock %}
+
+{% block content %}
+    <div>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div>
+                <ul>
+                    <li>Asset ID: {{ asaId }}</li>
+                    <li>Name: {{ adoptionName if adoptionName else 'unnamed' }}</li>
+                    <li>Blockday: {{ date | dateToIso }}</li>
+                    <li>Adopted by:
+                        {% if adopter %}
+                            {{ adopter }}
+                        {% else %}
+                            not adopted
+                        {% endif %}
+                    </li>
+                    <li class="h-8 flex">Face of the Month:
+                        <div class="pl-2 flex h-2 text-red-800 text-2xl">
+                            {% set count = faceOfTheMonth | getFaceOfTheMonthCount %}
+                            {% if count >= 1 %}<div class="w-1 transform rotate-6">l</div>{% endif %}
+                            {% if count >= 2 %}<div class="w-1 -mt-0.5 transform -rotate-3">l</div>{% endif %}
+                            {% if count >= 3 %}<div class="w-1 transform -rotate-6">l</div>{% endif %}
+                            {% if count >= 4 %}<div class="w-1 -mt-0.5 ml-1 transform rotate-3">l</div>{% endif %}
+                            {% if count >= 5 %}<div class="w-1 transform scale-y-150 rotate-45">l</div>{% endif %}
+                        </div>
+                    </li>
+                    {% if not adopter %}
+                        <li>It's yours? Adopt <a class="text-link" href="/adopt?asset={{ asaId }}">here</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div>
+                <img title="{{ title }}" alt="{{ title }}" src="https://{{ ipfs }}.ipfs.infura-ipfs.io"/>
+                <div class="text-right">
+                    <a class="text-link" target="_blank" href="https://ab2.gallery/asset/{{ asaId }}">ab2</a> |
+                    <a class="text-link" target="_blank" href="https://www.nftexplorer.app/asset/{{ asaId }}">nftexplorer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
