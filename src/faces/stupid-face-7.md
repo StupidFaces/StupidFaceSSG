@@ -8,5 +8,5 @@ date: 2021-09-26T13:02:00Z
 faceOfTheMonth:
     - 2021-11
 adoptionName: Zack
-adopter: @CryptoflipB
+adopter: "@CryptoflipB"
 ---
