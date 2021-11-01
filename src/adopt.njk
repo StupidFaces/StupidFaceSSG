@@ -13,15 +13,15 @@ title: Adopt Face
                     <p>If you are the holder of an unnamed Stupid Face you can use this form to give it a name used on this website only!</p>
                 </div>
             </div>
-            <form class="w-full" name="contact" method="POST" data-netlify="true">
+            <form class="w-full" name="adopt" method="POST" data-netlify="true">
                 <div class=" mb-8">
                     <div class=" mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                               for="grid-first-name">
+                               for="adopter-contact">
                             Your Twitter, Discord, Telegram or Email address:
                         </label>
                         <input class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
-                               id="grid-first-name" type="text" placeholder="e.g. twitter.com/moststupidfaces">
+                               id="adopter-contact" name="adopter-contact" type="text" placeholder="e.g. twitter.com/moststupidfaces">
                         <p class="text-gray-600 text-xs italic">Used to verify that you're the holder of the
                             corresponding
                             Stupid Face NFT.</p>
@@ -34,7 +34,7 @@ title: Adopt Face
                             Your Face:
                         </label>
                         <div class="relative mb-2">
-                            <select id="faceSelector" onchange="onFaceSelect(this.selectedOptions)" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            <select id="faceSelector" name="face-id" onchange="onFaceSelect(this.selectedOptions)" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                     id="grid-state">
                                 <option disabled selected>Select your Face</option>
                                 {% for face in collections.faces %}
@@ -56,11 +56,11 @@ title: Adopt Face
                 <div class="mb-8">
                     <div class="mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                               for="grid-first-name">
+                               for="adoption-name">
                             Your Face's new Name:
                         </label>
-                        <input class="w-full appearance-none block bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
-                               id="grid-first-name" type="text" placeholder="e.g. Forest">
+                        <input name="adoption-name" class="w-full appearance-none block bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
+                               id="adoption-name" type="text" placeholder="e.g. Forest">
                         <p class="text-gray-600 text-xs italic">Solely used on this website - won't affect Blockchain! Insults, web and wallet address will be ignored. It may take take up 48h hours until change takes place.</p>
                     </div>
                 </div>
@@ -68,11 +68,11 @@ title: Adopt Face
                 <div class=" mb-8">
                     <div class="mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                               for="grid-first-name">
+                               for="adopter">
                             Adopter's Name (optional):
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
-                               id="grid-first-name" type="text" placeholder="e.g. Jane">
+                        <input name="adopter" class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
+                               id="adopter" type="text" placeholder="e.g. Jane">
                         <p class="text-gray-600 text-xs italic">Will be displayed on Face's detail page if given.</p>
                     </div>
                 </div>
@@ -80,11 +80,11 @@ title: Adopt Face
                 <div class=" mb-8">
                     <div class="w-full mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                               for="grid-first-name">
+                               for="adopter-address">
                             Adopter's Webaddress (optional):
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
-                               id="grid-first-name" type="text" placeholder="e.g. www.jane.com">
+                        <input name="adopter-address" class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
+                               id="adopter-address" type="text" placeholder="e.g. www.jane.com">
                         <p class="text-gray-600 text-xs italic">Used to put a link behind adopter's name if given.</p>
                     </div>
                 </div>

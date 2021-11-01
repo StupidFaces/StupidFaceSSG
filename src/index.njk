@@ -29,7 +29,7 @@ permalink: 'index.html'
                             <div class="w-5 transform rotate-6">h</div>
                             <div class="w-5 transform -rotate-12">:</div>
                         </div>
-                        <div class="text-4xl">{{ faceOfTheMonth.data.title }}</div>
+                        <div class="text-4xl">{{ faceOfTheMonth.data.adoptionName if faceOfTheMonth.data.adoptionName else faceOfTheMonth.data.title }}</div>
                     </div>
                 </div>
 
