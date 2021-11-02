@@ -6,4 +6,7 @@ ipfs: bafkreib4qq7fhul2sqjhujj3rn56imis3h4fdg33yjzmsjv34qsyiugtta
 description: "Stupid Face #24"
 date: 2021-10-15T19:35:21Z
 faceOfTheMonth:
+adoptionName: Aspie
+adopter: "ValueVision"
+adopterAddress: "https://twitter.com/realvaluevision"
 ---
