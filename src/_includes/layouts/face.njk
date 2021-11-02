@@ -14,7 +14,9 @@
                     <li>Name: {{ adoptionName if adoptionName else 'unnamed' }}</li>
                     <li>Blockday: {{ date | dateToIso }}</li>
                     <li>Adopted by:
-                        {% if adopter %}
+                        {% if adopter and adopterAddress %}
+                            <a class="text-link" href="{{ adopterAddress }}" target="_blank">{{ adopter }}</a>
+                        {% elseif adopter %}
                             {{ adopter }}
                         {% else %}
                             not adopted
