@@ -9,23 +9,36 @@
     <div>
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div>
-                <ul>
-                    <li>Asset ID: {{ asaId }}</li>
-                    <li>Name: {{ adoptionName if adoptionName else 'unnamed' }}</li>
-                    <li>Blockday: {{ date | dateToIso }}</li>
-                    <li>Adopted by:
-                        {% if adopter and adopterAddress %}
-                            <a class="text-link" href="{{ adopterAddress }}" target="_blank">{{ adopter }}</a>
-                        {% elseif adopter %}
-                            {{ adopter }}
-                        {% else %}
-                            not adopted
-                        {% endif %}
+                <ul class="mb-4">
+                    <li class="grid grid-cols-2 lg:grid-cols-3">
+                        <div>Asset ID:</div>
+                        <div>{{ asaId }}</div>
                     </li>
-                    <li class="h-8 flex">Face of the Month:
+                    <li class="grid grid-cols-2 lg:grid-cols-3">
+                        <div>Adoption Name:</div>
+                        <div>{{ adoptionName if adoptionName else 'unnamed' }}</div>
+                    </li>
+                    <li class="grid grid-cols-2 lg:grid-cols-3">
+                        <div>Blockday:</div>
+                        <div>{{ date | dateToIso }}</div>
+                    </li>
+                    <li class="grid grid-cols-2 lg:grid-cols-3">
+                        <div>Adopted by:</div>
+                        <div>
+                            {% if adopter and adopterAddress %}
+                                <a class="text-link" href="{{ adopterAddress }}" target="_blank">{{ adopter }}</a>
+                            {% elseif adopter %}
+                                {{ adopter }}
+                            {% else %}
+                                not adopted
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="grid grid-cols-2 lg:grid-cols-3 h-8 flex">
+                        <div>Face of the Month:</div>
                         {% set count = faceOfTheMonth | getFaceOfTheMonthCount %}
-                        {% if not count %}<div class="ml-2">-</div>{% endif %}
-                        <div class="pl-2 flex h-2 text-red-800 text-2xl">
+                        {% if not count %}<div>-</div>{% endif %}
+                        <div class="flex -mt-1 h-2 text-red-800 text-2xl">
                             {% if count >= 1 %}<div class="w-1 transform rotate-6">l</div>{% endif %}
                             {% if count >= 2 %}<div class="w-1 -mt-0.5 transform -rotate-3">l</div>{% endif %}
                             {% if count >= 3 %}<div class="w-1 transform -rotate-6">l</div>{% endif %}
