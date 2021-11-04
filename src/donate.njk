@@ -9,7 +9,7 @@ title: Donate
         <div class="text-lg">
             <div class="mt-8 mb-8">
                 <h2 class="font-semibold">You are about to donate to bring more stupidity to this world... so better think twice!</h2>
-                <p>Code for dynamic approach of AlgoPay implementation can be found on <a class="text-link" href="https://github.com/StupidFaces/StupidFaceSSG/blob/master/src/donate.njk">Github</a></p>
+                <p>Code for dynamic approach of AlgoPay implementation can be found on <a class="text-link" target="_blank" href="https://github.com/StupidFaces/StupidFaceSSG/blob/master/src/donate.njk">Github</a></p> - but also DYOR.
             </div>
         </div>
         <form class="w-full" name="donate">
@@ -41,12 +41,12 @@ title: Donate
     <div id="root"></div>
 
     <script>
-        var myAmount = document.getElementById('amount').value;
-        var myNote = document.getElementById('note').value;
+        var initialAmount = document.getElementById('amount').value;
+        var initialNote = document.getElementById('note').value;
 
         window.details = {
-            amount: myAmount,
-            note: myNote,
+            amount: initialAmount,
+            note: initialNote,
             index: 0, // Asset index number, otherwise, enter 0 for Algorand
             recipient: "KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q"
         }
