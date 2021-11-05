@@ -2,7 +2,8 @@ module.exports = {
     purge: ['./src/**/*.njk', './src/**/*.md'],
     theme: {
         fontFamily: {
-            sans: 'Comic Sans MS, sans-serif',
+            itim: 'Itim, "Comic Neue", "Comic Sans MS", sans-serif',
+            comic: '"Comic Neue", "Comic Sans MS", sans-serif',
         },
         fontSize: {
             xs: '0.75rem',

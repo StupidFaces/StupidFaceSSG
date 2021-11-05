@@ -5,6 +5,7 @@ permalink: 'index.html'
 
 {% block content %}
     <div>
+
         {% set faceOfTheMonth = collections.faces | getFaceOfTheMonth %}
         {% if faceOfTheMonth %}
         <div class="grid ">
@@ -36,11 +37,12 @@ permalink: 'index.html'
             </a>
         </div>
         {% endif %}
+
         <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
             {% for face in collections.faces | reverse %}
                 <a href="{{ face.fileSlug }}" class="relative transform hover:scale-105 transition-all hover:shadow-lg">
                     <img title="{{ face.data.title }}" alt="{{ face.data.title }}" src="https://{{ face.data.ipfs }}.ipfs.infura-ipfs.io"/>
-                    <div class="flex h-2 absolute bottom-8 right-4 text-red-800 text-2xl">
+                    <div class="flex h-2 absolute bottom-8 right-4 text-red-800 text-2xl font-comic font-bold">
                         {% set count = face.data.faceOfTheMonth | getFaceOfTheMonthCount %}
                         {% if count >= 1 %}<div class="w-1 transform rotate-6">l</div>{% endif %}
                         {% if count >= 2 %}<div class="w-1 -mt-0.5 transform -rotate-3">l</div>{% endif %}
