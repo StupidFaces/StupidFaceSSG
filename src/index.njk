@@ -51,8 +51,13 @@ permalink: 'index.html'
                         {% if count >= 5 %}<div class="w-1 transform scale-y-150 rotate-45">l</div>{% endif %}
                     </div>
                     {% if face | isNew %}
-                        <div class="absolute bottom-0 left-0 py-0.5 px-2 bg-black text-stupid-primary text-xs opacity-20">
+                        <div class="absolute top-0 left-0 py-0.5 px-2 bg-black text-stupid-primary text-xs opacity-30">
                             <div>NEW</div>
+                        </div>
+                    {% endif %}
+                    {% if face | isFaceOfTheMonth %}
+                        <div class="absolute top-0 right-0 py-0.5 px-2 bg-red-900 text-stupid-primary text-xs opacity-90">
+                            <div>FACE</div>
                         </div>
                     {% endif %}
                 </a>

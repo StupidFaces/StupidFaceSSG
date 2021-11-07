@@ -77,7 +77,17 @@ module.exports = function (eleventyConfig) {
         let date7daysPast = new Date();
         date7daysPast.setDate(date7daysPast.getDate() - 7);
         return faceBlockDate.getTime() > date7daysPast.getTime();
+    });
 
+    eleventyConfig.addFilter("isFaceOfTheMonth", function(face) {
+        if (!face.data.faceOfTheMonth) return false;
+        const currentYearMonth = new Date().toISOString().slice(0,7);
+        for (const yearMonth of face.data.faceOfTheMonth) {
+            if (yearMonth === currentYearMonth) {
+                return true;
+            }
+        }
+        return false;
     });
 
     eleventyConfig.addFilter("dateToIso", function(date) {
