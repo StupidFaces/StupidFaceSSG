@@ -38,7 +38,7 @@
                         <div>Face of the Month:</div>
                         {% set count = faceOfTheMonth | getFaceOfTheMonthCount %}
                         {% if not count %}<div>-</div>{% endif %}
-                        <div class="flex -mt-1 h-2 text-red-800 text-2xl">
+                        <div class="flex -mt-1 h-2 text-red-800 text-2xl font-comic font-bold">
                             {% if count >= 1 %}<div class="w-1 transform rotate-6">l</div>{% endif %}
                             {% if count >= 2 %}<div class="w-1 -mt-0.5 transform -rotate-3">l</div>{% endif %}
                             {% if count >= 3 %}<div class="w-1 transform -rotate-6">l</div>{% endif %}

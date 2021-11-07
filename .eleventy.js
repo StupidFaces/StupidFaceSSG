@@ -64,13 +64,20 @@ module.exports = function (eleventyConfig) {
         let count = 0;
         try {
             for (const yearMonth of faceOfTheMonth) {
-                console.log('yearMonth2: ', yearMonth)
                 if (yearMonth.toString() <= currentYearMonth) {
                     count += 1;
                 }
             }
         } catch (e){}
         return count;
+    });
+
+    eleventyConfig.addFilter("isNew", function(face) {
+        const faceBlockDate = new Date(face.data.date);
+        let date7daysPast = new Date();
+        date7daysPast.setDate(date7daysPast.getDate() - 7);
+        return faceBlockDate.getTime() > date7daysPast.getTime();
+
     });
 
     eleventyConfig.addFilter("dateToIso", function(date) {
