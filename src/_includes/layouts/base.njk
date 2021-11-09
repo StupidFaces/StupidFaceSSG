@@ -90,8 +90,8 @@
     <div class="mt-4 mb-16">
         <a target="_blank" href="https://www.randgallery.com/algo-collection/?address=STFCJE356Y6S5DUWZWJ2VIRI37DYQ65OTDMJQVOT62NMOQ4BW2YADS5SFQ"
            class="flex bg-red-900 p-6 justify-center items-start text-stupid-primary mb-4 transform hover:scale-105 transition-all hover:shadow-lg">
-            <div class="mr-2">FIRST REVERSE AUCTION IN:</div>
-            <div class="flex" id="timer"><div>0d 00h 00m 00s</div></div>
+            <div>FIRST REVERSE AUCTION</div>
+            <div class="flex" id="timer"><div>&nbsp;IN: 0d 00h 00m 00s</div></div>
         </a>
         {% block content %}
         {% endblock %}
@@ -115,9 +115,9 @@
 
             var timer = document.getElementById("timer");
             if (diff > 0) {
-                timer.innerHTML = `<div>${d}d ${h}h ${m}m ${s}s</div>`;
+                timer.innerHTML = `<div>&nbsp;IN: ${d}d ${h}h ${m}m ${s}s</div>`;
             } else {
-                timer.innerHTML = `<div>00:00:00</div>`;
+                timer.innerHTML = `<div>&nbsp;🔥 LIVE 🔥</div>`;
 
             }
         }
