@@ -74,9 +74,9 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter("isNew", function(face) {
         const faceBlockDate = new Date(face.data.date);
-        let date7daysPast = new Date();
-        date7daysPast.setDate(date7daysPast.getDate() - 7);
-        return faceBlockDate.getTime() > date7daysPast.getTime();
+        let date6daysPast = new Date();
+        date6daysPast.setDate(date6daysPast.getDate() - 6);
+        return faceBlockDate.getTime() > date6daysPast.getTime();
     });
 
     eleventyConfig.addFilter("isFaceOfTheMonth", function(face) {
