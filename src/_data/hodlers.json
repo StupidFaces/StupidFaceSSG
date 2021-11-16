@@ -12,5 +12,12 @@
         "hodlSince": "2021-10-08",
         "logoLocal": "/assets/hodlers/CryptoBunny.png",
         "homepage": "https://twitter.com/CryptoBunnyNFT"
+    },
+        {
+        "name": "dhow",
+        "hodlCount": "1",
+        "hodlSince": "2021-10-16",
+        "logoLocal": "/assets/hodlers/dhow.jfif",
+        "homepage": "https://dlinktree.com/dhowdao"
     }
 ]
