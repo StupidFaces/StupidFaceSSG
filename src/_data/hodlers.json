@@ -5,5 +5,12 @@
         "hodlSince": "2021-11",
         "logoLocal": "/assets/hodlers/3DwOah_05.png",
         "homepage": "https://ufwoah.space/"
+    },
+    {
+        "name": "CryptoBunny",
+        "hodlCount": "1",
+        "hodlSince": "2021-10-08",
+        "logoLocal": "/assets/hodlers/CryptoBunny.png",
+        "homepage": "https://twitter.com/CryptoBunnyNFT"
     }
 ]
