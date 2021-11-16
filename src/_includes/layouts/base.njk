@@ -57,6 +57,11 @@
                     </a>
                 </li>
                 <li class="mr-6">
+                    <a class="text-gray-700 border-none hover:text-gray-800" href="/hodlers">
+                        Hodlers
+                    </a>
+                </li>
+                <li class="mr-6">
                     <a class="text-gray-700 border-none hover:text-gray-800" href="/about">
                         About
                     </a>
@@ -101,6 +106,10 @@
 
     <script>
         function updateTimer() {
+            var timer = document.getElementById("timer");
+
+            if (!timer) return;
+
             future = 1636495200000;
             now = new Date();
             diff = future - now;
@@ -115,7 +124,7 @@
             m = mins - hours * 60;
             s = secs - mins * 60;
 
-            var timer = document.getElementById("timer");
+
             if (diff > 0) {
                 timer.innerHTML = `<div>&nbsp;IN: ${d}d ${h}h ${m}m ${s}s</div>`;
             } else {

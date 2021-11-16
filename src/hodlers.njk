@@ -1,0 +1,25 @@
+---
+permalink: 'hodlers/index.html'
+title: Hodlers
+---
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+        {% for hodler in hodlers %}
+            <a href="{{ hodler.homepage }}" target="_blank" class="relative transform hover:scale-105 transition-all hover:shadow-lg hodlerLink">
+                <div class="bg-stupid-primary p-4 text-stupid-secondary">
+                    <img title="{{ hodler.name }}" alt="{{ hodler.name }}" src="{{ hodler.logoLocal }}" />
+                    <div class="flex justify-between mt-4">
+                        <div class="">{{ hodler.name }}</div>
+                        <div class="">hodls: {{ hodler.hodlCount }}</div>
+                    </div>
+                </div>
+
+            </a>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+

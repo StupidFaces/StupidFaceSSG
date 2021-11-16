@@ -43,6 +43,7 @@ module.exports = {
                 },
                 stupid: {
                     primary: '#fff5db',
+                    secondary: '#524d41',
                 },
             },
         },

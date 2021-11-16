@@ -109,3 +109,12 @@
 .rand-logo {
     background-color: #012;
 }
+
+.hodlerLink img {
+    filter: sepia(1) grayscale(0.6);
+    transition: all 0.7s;
+}
+
+.hodlerLink:hover img {
+    filter: sepia(0) grayscale(0);
+}
