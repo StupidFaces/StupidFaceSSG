@@ -6,10 +6,10 @@ title: Hodlers
 
 {% block content %}
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-        {% for hodler in hodlers %}
-            <a href="{{ hodler.homepage }}" target="_blank" class="relative transform hover:scale-105 transition-all hover:shadow-lg hodlerLink">
-                <div class="bg-stupid-primary p-4 text-stupid-secondary">
-                    <img title="{{ hodler.name }}" alt="{{ hodler.name }}" src="{{ hodler.logoLocal }}" />
+        {% for hodler in hodlers | getSortedHodlers %}
+            <a href="{{ hodler.homepage }}" target="_blank" class="bg-stupid-primary relative transform hover:scale-105 transition-all hover:shadow-lg hodlerLink">
+                <div class="p-4 text-stupid-secondary">
+                    <img title="{{ hodler.name }}" alt="{{ hodler.name }}" src="{{ hodler | getLogoUrl }}" />
                     <div class="flex justify-between mt-4">
                         <div class="">{{ hodler.name }}</div>
                         <div class="">hodls: {{ hodler.hodlCount }}</div>

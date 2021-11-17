@@ -90,6 +90,27 @@ module.exports = function (eleventyConfig) {
         return false;
     });
 
+    eleventyConfig.addFilter("getLogoUrl", function(hodler) {
+        let logoUrl = '';
+        if (hodler['logoIpfs']) {
+            //logoUrl = `https://gateway.pinata.cloud/ipfs/${hodler.logoIpfs}`
+            logoUrl = `https://cloudflare-ipfs.com/ipfs/${hodler.logoIpfs}`
+        } else if (hodler['logoLocal']) {
+            logoUrl = hodler['logoLocal'];
+        }
+        return logoUrl;
+    });
+
+    eleventyConfig.addFilter("getSortedHodlers", function(hodlers) {
+        let adjustedHodlers = hodlers.filter(hodler => parseInt(hodler.hodlCount) > 0)
+
+        adjustedHodlers = adjustedHodlers.sort(function (hodlerA, hodlerB) {
+            return parseInt(hodlerB.hodlCount) - parseInt(hodlerA.hodlCount);
+        })
+
+        return adjustedHodlers;
+    });
+
     eleventyConfig.addFilter("dateToIso", function(date) {
         return date.toISOString().slice(0,10);
     });

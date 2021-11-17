@@ -11,13 +11,29 @@
         "hodlCount": "1",
         "hodlSince": "2021-10-08",
         "logoLocal": "/assets/hodlers/CryptoBunny.png",
+        "logoIpfs": "QmfY8KDYSuNeAq46NQzwojTkQy6yNRBNJS6rpdXpKtH7rB",
         "homepage": "https://twitter.com/CryptoBunnyNFT"
     },
-        {
+    {
         "name": "dhow",
         "hodlCount": "1",
         "hodlSince": "2021-10-16",
         "logoLocal": "/assets/hodlers/dhow.jfif",
+        "logoIpfs": "QmTssSsDc2TQDsnkS6UUZrjrQ4L89hoQZvsnbyTRnCoQUV",
         "homepage": "https://dlinktree.com/dhowdao"
+    },
+    {
+        "name": "ValueVision",
+        "hodlCount": "6",
+        "hodlSince": "2021-10-15",
+        "logoIpfs": "QmYhHYN4tgz2FuWJCHUopKFWEvxiQ91tDruomdWWCEczND",
+        "homepage": "https://twitter.com/realvaluevision"
+    },
+    {
+        "name": "Dope Cats",
+        "hodlCount": "0",
+        "hodlSince": "2021-10-09",
+        "logoIpfs": "bafkreigmwlltevboeizaq7nouxamriajcyj2jjuyfteo7wsz53boqqt5iy",
+        "homepage": "https://twitter.com/dopecat069"
     }
 ]
