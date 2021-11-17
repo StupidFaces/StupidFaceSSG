@@ -42,5 +42,12 @@
         "hodlSince": "2021-11-13",
         "logoLocal": "/assets/hodlers/Alnimator.png",
         "homepage": "https://twitter.com/aLnimator"
+    },
+    {
+        "name": "IRLalgo",
+        "hodlCount": "2",
+        "hodlSince": "2021-10-08",
+        "logoIpfs": "QmbihLARRda7LsSu8689nzHCvw3UYXq9KfdzbkSjrUFRcc",
+        "homepage": "https://twitter.com/IRLalgo"
     }
 ]
