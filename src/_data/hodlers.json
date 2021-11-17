@@ -35,5 +35,12 @@
         "hodlSince": "2021-10-09",
         "logoIpfs": "bafkreigmwlltevboeizaq7nouxamriajcyj2jjuyfteo7wsz53boqqt5iy",
         "homepage": "https://twitter.com/dopecat069"
+    },
+    {
+        "name": "Alnimator",
+        "hodlCount": "1",
+        "hodlSince": "2021-11-13",
+        "logoLocal": "/assets/hodlers/Alnimator.png",
+        "homepage": "https://twitter.com/aLnimator"
     }
 ]
