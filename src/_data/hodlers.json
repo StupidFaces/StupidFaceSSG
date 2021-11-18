@@ -63,5 +63,12 @@
         "hodlSince": "2021-11-18",
         "logoIpfs": "QmUafXURodNNf5YiiBtX8rMxeYsfH7KW76UVUGNc4cCWZg",
         "homepage": "https://twitter.com/nft_null"
-    }
+    },
+    {
+        "name": "imrubex",
+        "hodlCount": "1",
+        "hodlSince": "2021-11-17",
+        "logoIpfs": "bafybeighwd54rygm7cul2e5owtbiqtcpzcj27abw6vxtryell5g2vyigsa",
+        "homepage": "https://twitter.com/rbncrypto1"
+    },
 ]
