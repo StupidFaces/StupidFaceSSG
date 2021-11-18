@@ -1,0 +1,20 @@
+{% macro doodleCounter(count, colorClass) %}
+    <div class="flex">
+        <div class="flex h-2 {{ colorClass }} text-2xl font-comic font-bold">
+            {% if count >= 1 %}<div class="w-1 transform rotate-6">l</div>{% endif %}
+            {% if count >= 2 %}<div class="w-1 -mt-0.5 transform -rotate-3">l</div>{% endif %}
+            {% if count >= 3 %}<div class="w-1 transform -rotate-6">l</div>{% endif %}
+            {% if count >= 4 %}<div class="w-1 -mt-0.5 ml-1 transform rotate-3">l</div>{% endif %}
+            {% if count >= 5 %}<div class="w-1 transform scale-y-150 rotate-45">l</div>{% endif %}
+        </div>
+        {% if count > 5 %}
+            <div class="flex ml-2 h-2 {{ colorClass }} text-2xl font-comic font-bold">
+                {% if count >= 6 %}<div class="w-1 transform rotate-6">l</div>{% endif %}
+                {% if count >= 7 %}<div class="w-1 -mt-0.5 transform -rotate-3">l</div>{% endif %}
+                {% if count >= 8 %}<div class="w-1 transform -rotate-6">l</div>{% endif %}
+                {% if count >= 9 %}<div class="w-1 -mt-0.5 ml-1 transform rotate-3">l</div>{% endif %}
+                {% if count >= 10 %}<div class="w-1 transform scale-y-150 rotate-45">l</div>{% endif %}
+            </div>
+        {% endif %}
+    </div>
+{% endmacro %}

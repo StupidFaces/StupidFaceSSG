@@ -3,6 +3,7 @@ permalink: 'hodlers/index.html'
 title: Hodlers
 ---
 {% extends 'layouts/base.njk' %}
+{% import "macros/doodleCounter.njk" as doodleCounter %}
 
 {% block content %}
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -12,7 +13,9 @@ title: Hodlers
                     <img title="{{ hodler.name }}" alt="{{ hodler.name }}" src="{{ hodler | getLogoUrl }}" />
                     <div class="flex justify-between mt-4">
                         <div class="">{{ hodler.name }}</div>
-                        <div class="">hodls: {{ hodler.hodlCount }}</div>
+                        <div class="-mt-1 mr-1">
+                            {{ doodleCounter.doodleCounter(hodler.hodlCount, 'text-stupid-secondary') }}
+                        </div>
                     </div>
                 </div>
 
