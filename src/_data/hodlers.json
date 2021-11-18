@@ -49,5 +49,19 @@
         "hodlSince": "2021-10-08",
         "logoIpfs": "QmbihLARRda7LsSu8689nzHCvw3UYXq9KfdzbkSjrUFRcc",
         "homepage": "https://twitter.com/IRLalgo"
+    },
+        {
+        "name": "Argonaut5000",
+        "hodlCount": "1",
+        "hodlSince": "2021-10-16",
+        "logoIpfs": "bafkreiachaniurq63uzzja5nnrbgnja2vh6n7qn7gaut55ff4dpayd27ye",
+        "homepage": "https://argonaut5000.com/"
+    },
+    {
+        "name": "Null",
+        "hodlCount": "1",
+        "hodlSince": "2021-11-18",
+        "logoIpfs": "QmUafXURodNNf5YiiBtX8rMxeYsfH7KW76UVUGNc4cCWZg",
+        "homepage": "https://twitter.com/nft_null"
     }
 ]
