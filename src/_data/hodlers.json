@@ -70,5 +70,12 @@
         "hodlSince": "2021-11-17",
         "logoIpfs": "bafybeighwd54rygm7cul2e5owtbiqtcpzcj27abw6vxtryell5g2vyigsa",
         "homepage": "https://twitter.com/rbncrypto1"
+    },
+    {
+        "name": "cryptoguy559",
+        "hodlCount": "1",
+        "hodlSince": "2021-10-10",
+        "logoIpfs": "bafkreiewm2f5g7vut5r7gpic4ptktb77f263oa7om6cbesfxhclu6gnxfa",
+        "homepage": "https://twitter.com/cryptoguy559"
     }
 ]
