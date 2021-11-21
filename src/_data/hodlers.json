@@ -82,7 +82,7 @@
         "name": "BennyNFTs",
         "hodlCount": "1",
         "hodlSince": "2021-11-21",
-        "logoIpfs": "bafkreigsijtqjfyhpq3batcrjd6g7bec63gtdep6txcdvc3xpqqnnb4t4a",
+        "logoLocal": "/assets/hodlers/BennyNFTs.png",
         "homepage": "https://twitter.com/BennyNFTs"
     }
 ]
