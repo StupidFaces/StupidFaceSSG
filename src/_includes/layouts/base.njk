@@ -37,12 +37,13 @@
 <body class="antialiased w-full text-gray-700 bg-gray-50 h-full overflow-y-scroll font-itim">
 <div class="max-w-screen-lg px-3 mx-auto h-full grid template-rows-min-content ">
     <div class="">
-        <div class="pt-16 pb-12">
+        <div class="header">
+
+            {% block title %}
             <h1 class="font-semibold text-3xl text-center text-gray-800">
-                {% block title %}
                     {{ title if title else site.title }}
-                {% endblock %}
             </h1>
+            {% endblock %}
         </div>
         <nav class="flex flex-wrap text-xl border-b border-gray-300 pb-0.5">
             <ul class="flex">

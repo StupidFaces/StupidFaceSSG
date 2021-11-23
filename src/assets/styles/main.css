@@ -118,3 +118,10 @@
 .hodlerLink:hover img {
     filter: sepia(0) grayscale(0);
 }
+
+.header {
+    height: 160px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}

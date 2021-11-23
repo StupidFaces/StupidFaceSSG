@@ -41,12 +41,17 @@ permalink: 'index.html'
 
         <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
             {% for face in collections.faces | reverse %}
-                <a href="{{ face.fileSlug }}" class="relative transform hover:scale-105 transition-all hover:shadow-lg">
-                    <img title="{{ face.data.title }}" alt="{{ face.data.title }}" src="https://{{ face.data.ipfs }}.ipfs.infura-ipfs.io"/>
+                <a href="{{ face.fileSlug }}" class="relative group transform hover:scale-105 transition-all hover:shadow-lg">
+                    <img title="{{ face.data.titleTag }}" alt="{{ face.data.titleTag }}" src="https://{{ face.data.ipfs }}.ipfs.infura-ipfs.io"/>
                     {% set count = face.data.faceOfTheMonth | getFaceOfTheMonthCount %}
                     <div class="absolute bottom-8 right-4">
                         {{ doodleCounter.doodleCounter(count, 'text-red-800') }}
                     </div>
+                    {% if face.data.adoptionName %}
+                        <div class="absolute bottom-2 left-3 text-stupid-secondary opacity-50 md:opacity-0 group-hover:opacity-40 transform transition-all duration-300">
+                            {{ face.data.adoptionName }}
+                        </div>
+                    {% endif %}
                     {% if face | isNew %}
                         <div class="absolute top-0 left-0 py-0.5 px-2 bg-black text-stupid-primary text-xs opacity-30">
                             <div>NEW</div>
