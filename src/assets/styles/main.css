@@ -125,3 +125,21 @@
     justify-content: center;
     align-items: center;
 }
+
+
+.button-promo {
+    @apply bg-red-900;
+    @apply p-3;
+    @apply text-stupid-primary;
+    @apply transform;
+    @apply hover:scale-105;
+    @apply transition-all;
+    @apply hover:shadow-lg;
+}
+
+.button-disabled {
+    @apply bg-gray-600;
+    @apply text-gray-400;
+    cursor: not-allowed;
+
+}

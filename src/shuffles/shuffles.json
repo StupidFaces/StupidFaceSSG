@@ -1,0 +1,5 @@
+{
+    "layout": "layouts/shuffle.njk",
+    "tags": "shuffles",
+    "permalink": "{{ page.fileSlug }}/index.html"
+}

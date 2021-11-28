@@ -1,0 +1,101 @@
+
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+
+    <div class="faces grid grid-cols-3 gap-4 md:grid-cols-5">
+        {% set shuffleFaces = collections.faces | getFacesByPhysicalIds(shuffleFaces) %}
+        {% for face in shuffleFaces | reverse%}
+            <a href="/{{ face.fileSlug }}" class="relative group transform hover:scale-105 transition-all hover:shadow-lg">
+                <img title="{{ face.data.titleTag }}" alt="{{ face.data.titleTag }}" src="https://{{ face.data.ipfs }}.ipfs.infura-ipfs.io"/>
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="text-2xl text-center my-8" id="shuffle-timer-wrapper">
+        <div class="">Shuffle entry closes in:</div>
+        <div id="shuffle-timer" data-end="{{ endDateTimestamp }}">0d 00h 00m 00s</div>
+    </div>
+
+    <div class="text-xl text-center">
+        Fill out the form in order to have a chance to buy one of the faces shown above for <span class="text-black font-semibold">{{ mintPrice }}<img class="inline align-baseline h-3 w-3" src="/assets/images/algo.png"/></span>
+    </div>
+
+    <div class="grid text-xl my-12">
+
+        <div class="conditions">
+            <h3 class="font-bold uppercase">Shuffle conditions:</h3>
+            <div>&#8226; Valid entries need at least <span class="text-black font-semibold mr-1">15<img class="inline align-baseline h-3 w-3" src="/assets/images/algo.png"/></span>in their wallet when shuffle closes.</div>
+            <div>&#8226; Only 1 entry and Stupid Face per person.</div>
+            <div>&#8226; Make sure we are able to contact you with the given contact informations.</div>
+            <div>&#8226; After shuffle closed, winners will be shuffled, listed anonymized here and provided with a Safe Swap link.</div>
+        </div>
+
+
+    </div>
+
+    <div class="shuffle-form">
+        <form class="w-full" name="stupidfaces-shuffle-{{id}}" method="POST" data-netlify="true">
+            <div class=" mb-8">
+                <div class=" mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                            for="adopter-contact">
+                        Your Twitter, Discord or Telegram handle:
+                    </label>
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
+                            id="adopter-contact" name="adopter-contact" type="text" placeholder="e.g. twitter.com/moststupidfaces">
+                </div>
+            </div>
+
+            <div class=" mb-8">
+                <div class="mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                            for="adopter">
+                        Your Algorand public wallet address:
+                    </label>
+                    <input name="adopter" class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white"
+                            id="adopter" type="text" placeholder="e.g. KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q">
+                </div>
+            </div>
+
+            <button type="submit" id="shuffle-submit" class="button-promo p-3 w-full my-8 tracking-wider">ENTER SHUFFLE</button>
+        </form>
+    </div>
+
+
+
+    <script>
+    function updateShuffleTimer() {
+        var timer = document.getElementById("shuffle-timer");
+        var timerWrapper = document.getElementById("shuffle-timer-wrapper");
+        var shuffleSubmit = document.getElementById("shuffle-submit");
+
+        if (!timer) return;
+
+        future = timer.dataset.end;
+        now = new Date();
+        diff = future - now;
+
+        days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        hours = Math.floor(diff / (1000 * 60 * 60));
+        mins = Math.floor(diff / (1000 * 60));
+        secs = Math.floor(diff / 1000);
+
+        d = days;
+        h = hours - days * 24;
+        m = mins - hours * 60;
+        s = secs - mins * 60;
+
+
+        if (diff > 0) {
+            timer.innerHTML = `${d}d ${h}h ${m}m ${s}s`;
+        } else {
+            timerWrapper.innerHTML = `<div>Shuffle closed.</div><div>🚫</div>`;
+            shuffleSubmit.classList.remove('button-promo');
+            shuffleSubmit.classList.add('button-disabled');
+            shuffleSubmit.setAttribute('disabled', true);
+        }
+    }
+    setInterval('updateShuffleTimer()', 1000);
+</script>
+{% endblock %}
