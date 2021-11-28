@@ -1,6 +1,9 @@
 
 {% extends 'layouts/base.njk' %}
 
+{% block shuffle %}
+{% endblock %}
+
 {% block content %}
 
     <div class="faces grid grid-cols-3 gap-4 md:grid-cols-5">
@@ -35,7 +38,7 @@
     </div>
 
     <div class="shuffle-form">
-        <form class="w-full" name="stupidfaces-shuffle-{{id}}" method="POST" data-netlify="true">
+        <form class="w-full" name="stupidfaces-shuffle-{{id}}" method="POST" data-netlify="true"  netlify-honeypot="honigkuchen">
             <div class=" mb-8">
                 <div class=" mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -58,7 +61,14 @@
                 </div>
             </div>
 
-            <button type="submit" id="shuffle-submit" class="button-promo p-3 w-full my-8 tracking-wider">ENTER SHUFFLE</button>
+            <div class="hidden">
+                <div class="">
+                    <label for="honigkuchen">Schmatz</label>
+                    <input name="honigkuchen" class="appearance-none block w-full bg-gray-200" type="text">
+                </div>
+            </div>
+
+            <button type="submit" id="shuffle-submit" class="button-promo p-3 w-full my-8 tracking-wider">ENTER SHUFFLE 🎉</button>
         </form>
     </div>
 

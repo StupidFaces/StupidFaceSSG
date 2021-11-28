@@ -40,10 +40,11 @@
         <div class="header">
 
             {% block title %}
-            <h1 class="font-semibold text-3xl text-center text-gray-800">
+                <h1 class="font-semibold text-3xl text-center text-gray-800">
                     {{ title if title else site.title }}
-            </h1>
+                </h1>
             {% endblock %}
+
         </div>
         <nav class="flex flex-wrap text-xl border-b border-gray-300 pb-0.5">
             <ul class="flex">
@@ -101,6 +102,15 @@
                 <div class="flex" id="timer"><div>&nbsp;IN: 0d 00h 00m 00s</div></div>
             </a>
         {% endif %}
+        {% block shuffle %}
+            {% if false %}
+                <a href="/shuffle-1"
+                class="flex bg-red-900 p-6 justify-center items-start mb-4 button-promo">
+                    <div>ENTER SHUFFLE</div>
+                    <div class="flex" id="timer"><div>&nbsp;🎉 0d 00h 00m 00s</div></div>
+                </a>
+            {% endif %}
+        {% endblock %}
         {% block content %}
         {% endblock %}
     </div>
@@ -111,7 +121,7 @@
 
             if (!timer) return;
 
-            future = 1636495200000;
+            future = 1638388800000;
             now = new Date();
             diff = future - now;
 
@@ -127,10 +137,11 @@
 
 
             if (diff > 0) {
-                timer.innerHTML = `<div>&nbsp;IN: ${d}d ${h}h ${m}m ${s}s</div>`;
+                timer.innerHTML = `<div>&nbsp;🎉 ${d}d ${h}h ${m}m ${s}s</div>`;
+                //timer.innerHTML = `<div>&nbsp;IN: ${d}d ${h}h ${m}m ${s}s</div>`;
             } else {
-                timer.innerHTML = `<div>&nbsp;🔥 LIVE 🔥</div>`;
-
+                timer.innerHTML = `<div>&nbsp;🚫 ENDED 🚫</div>`;
+                //timer.innerHTML = `<div>&nbsp;🔥 LIVE 🔥</div>`;
             }
         }
         setInterval('updateTimer()', 1000);
