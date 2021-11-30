@@ -7,13 +7,40 @@
 {% block content %}
 
     <div class="faces grid grid-cols-3 gap-4 md:grid-cols-5">
-        {% set shuffleFaces = collections.faces | getFacesByPhysicalIds(shuffleFaces) %}
-        {% for face in shuffleFaces | reverse%}
+        {% set filteredFaces = collections.faces | getFacesByPhysicalIds(shuffleFaces) %}
+        {% for face in filteredFaces | reverse %}
             <a href="/{{ face.fileSlug }}" class="relative group transform hover:scale-105 transition-all hover:shadow-lg">
                 <img title="{{ face.data.titleTag }}" alt="{{ face.data.titleTag }}" src="https://{{ face.data.ipfs }}.ipfs.infura-ipfs.io"/>
+                <div class="text-red-800 text-sm font-bold absolute top-1 left-2">{{ winners[face.data.id].slice(0,10) + '...' if winners[face.data.id] }}</div>
             </a>
         {% endfor %}
     </div>
+
+    {% if hasWinners %}
+        <div class="text-2xl text-center my-8" id="shuffle-timer-wrapper">
+            <div class="">🎉 Shuffle finished 🎉</div>
+            <div>Congrats to the winners!</div>
+        </div>
+
+        <div class="text-xl text-center">
+            You will be contacted shortly and provided with a Safe Swap link!
+        </div>
+
+        <div class="grid text my-12">
+
+            <div class="conditions">
+                <h3 class="font-bold uppercase">Shuffle conditions:</h3>
+                <div>&#8226; Valid entries need at least <span class="text-black font-semibold mr-1">15<img class="inline align-baseline h-3 w-3" src="/assets/images/algo.png"/></span>in their wallet when shuffle closes.</div>
+                <div>&#8226; Only 1 entry and Stupid Face per person.</div>
+                <div>&#8226; Make sure we are able to contact you with the given contact informations.</div>
+                <div>&#8226; After shuffle closed, winners will be shuffled and listed anonymized here.</div>
+                <div>&#8226; Winners will then be contacted and provided with a Safe Swap link to receive their face for <span class="text-black font-semibold">{{ mintPrice }}<img class="inline align-baseline h-3 w-3" src="/assets/images/algo.png"/></span></div>
+                <div>&#8226; Winners have 24h to confirm Safe Swap.</div>
+            </div>
+
+
+        </div>
+    {% else %}
 
     <div class="text-2xl text-center my-8" id="shuffle-timer-wrapper">
         <div class="">Shuffle entry closes in:</div>
@@ -24,14 +51,16 @@
         Fill out the form in order to have a chance to buy one of the faces shown above for <span class="text-black font-semibold">{{ mintPrice }}<img class="inline align-baseline h-3 w-3" src="/assets/images/algo.png"/></span>
     </div>
 
-    <div class="grid text-xl my-12">
+    <div class="grid text my-12">
 
         <div class="conditions">
             <h3 class="font-bold uppercase">Shuffle conditions:</h3>
             <div>&#8226; Valid entries need at least <span class="text-black font-semibold mr-1">15<img class="inline align-baseline h-3 w-3" src="/assets/images/algo.png"/></span>in their wallet when shuffle closes.</div>
             <div>&#8226; Only 1 entry and Stupid Face per person.</div>
             <div>&#8226; Make sure we are able to contact you with the given contact informations.</div>
-            <div>&#8226; After shuffle closed, winners will be shuffled, listed anonymized here and provided with a Safe Swap link.</div>
+            <div>&#8226; After shuffle closed, winners will be shuffled and listed anonymized here.</div>
+            <div>&#8226; Winners will then be contacted and provided with a Safe Swap link to receive their face for <span class="text-black font-semibold">{{ mintPrice }}<img class="inline align-baseline h-3 w-3" src="/assets/images/algo.png"/></span></div>
+            <div>&#8226; Winners have 24h to confirm Safe Swap.</div>
         </div>
 
 
@@ -75,37 +104,38 @@
 
 
     <script>
-    function updateShuffleTimer() {
-        var timer = document.getElementById("shuffle-timer");
-        var timerWrapper = document.getElementById("shuffle-timer-wrapper");
-        var shuffleSubmit = document.getElementById("shuffle-submit");
+        function updateShuffleTimer() {
+            var timer = document.getElementById("shuffle-timer");
+            var timerWrapper = document.getElementById("shuffle-timer-wrapper");
+            var shuffleSubmit = document.getElementById("shuffle-submit");
 
-        if (!timer) return;
+            if (!timer) return;
 
-        future = timer.dataset.end;
-        now = new Date();
-        diff = future - now;
+            future = timer.dataset.end;
+            now = new Date();
+            diff = future - now;
 
-        days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        hours = Math.floor(diff / (1000 * 60 * 60));
-        mins = Math.floor(diff / (1000 * 60));
-        secs = Math.floor(diff / 1000);
+            days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            hours = Math.floor(diff / (1000 * 60 * 60));
+            mins = Math.floor(diff / (1000 * 60));
+            secs = Math.floor(diff / 1000);
 
-        d = days;
-        h = hours - days * 24;
-        m = mins - hours * 60;
-        s = secs - mins * 60;
+            d = days;
+            h = hours - days * 24;
+            m = mins - hours * 60;
+            s = secs - mins * 60;
 
 
-        if (diff > 0) {
-            timer.innerHTML = `${d}d ${h}h ${m}m ${s}s`;
-        } else {
-            timerWrapper.innerHTML = `<div>Shuffle closed.</div><div>🚫</div>`;
-            shuffleSubmit.classList.remove('button-promo');
-            shuffleSubmit.classList.add('button-disabled');
-            shuffleSubmit.setAttribute('disabled', true);
+            if (diff > 0) {
+                timer.innerHTML = `${d}d ${h}h ${m}m ${s}s`;
+            } else {
+                timerWrapper.innerHTML = `<div>Shuffle closed.</div><div>🚫</div>`;
+                shuffleSubmit.classList.remove('button-promo');
+                shuffleSubmit.classList.add('button-disabled');
+                shuffleSubmit.setAttribute('disabled', true);
+            }
         }
-    }
-    setInterval('updateShuffleTimer()', 1000);
-</script>
+        setInterval('updateShuffleTimer()', 1000);
+    </script>
+    {% endif %}
 {% endblock %}
