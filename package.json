@@ -16,7 +16,8 @@
     "format:js": "prettier '**/*.js' --write && eslint '**/*.js' --fix",
     "format:json": "prettier '**/*.json' --write",
     "format": "run-s format:*",
-    "lint": "eslint --ext .js ."
+    "lint": "eslint --ext .js .",
+    "shuffle": "node ./shuffleBot/shuffleBot.js"
   },
   "license": "ISC",
   "devDependencies": {
