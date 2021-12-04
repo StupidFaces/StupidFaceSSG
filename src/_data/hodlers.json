@@ -84,5 +84,12 @@
         "hodlSince": "2021-11-21",
         "logoLocal": "/assets/hodlers/BennyNFTs.png",
         "homepage": "https://twitter.com/BennyNFTs"
+    },
+        {
+        "name": "Simino",
+        "hodlCount": "1",
+        "hodlSince": "2021-12-01",
+        "logoIpfs": "bafkreifcvckjllt5jzsroenqyquzqvemyhvoqaffsg4dergeca7cq33z3e",
+        "homepage": "https://twitter.com/simi_nft"
     }
 ]
