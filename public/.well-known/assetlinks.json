@@ -1,0 +1,7 @@
+[{
+    "relation": ["lookalikes/allowlist"],
+    "target" : { "namespace": "web", "site": "https://stupidface.art"}
+},{
+    "relation": ["lookalikes/allowlist"],
+    "target" : { "namespace": "web", "site": "https://stupidfaces.art"}
+}]
