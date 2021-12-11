@@ -50,7 +50,7 @@
         "logoIpfs": "QmXudbHjJmKdaBFLAquohAS2TwFuQR1wy9xon1X5FKKgg8",
         "homepage": "https://twitter.com/IRLalgo"
     },
-        {
+    {
         "name": "Argonaut5000",
         "hodlCount": "1",
         "hodlSince": "2021-10-16",
@@ -78,18 +78,25 @@
         "logoIpfs": "bafkreiewm2f5g7vut5r7gpic4ptktb77f263oa7om6cbesfxhclu6gnxfa",
         "homepage": "https://twitter.com/cryptoguy559"
     },
-        {
+    {
         "name": "BennyNFTs",
         "hodlCount": "1",
         "hodlSince": "2021-11-21",
         "logoLocal": "/assets/hodlers/BennyNFTs.png",
         "homepage": "https://twitter.com/BennyNFTs"
     },
-        {
+    {
         "name": "Simino",
         "hodlCount": "1",
         "hodlSince": "2021-12-01",
         "logoIpfs": "bafkreifcvckjllt5jzsroenqyquzqvemyhvoqaffsg4dergeca7cq33z3e",
         "homepage": "https://twitter.com/simi_nft"
+    },
+    {
+        "name": "Penny Crayon NFTs",
+        "hodlCount": "1",
+        "hodlSince": "2021-12-11",
+        "logoLocal": "/assets/hodlers/PennyCrayonNFTs.png",
+        "homepage": "https://twitter.com/PennyCrayonNFTs"
     }
 ]
