@@ -98,5 +98,13 @@
         "hodlSince": "2021-12-11",
         "logoLocal": "/assets/hodlers/PennyCrayonNFTs.png",
         "homepage": "https://twitter.com/PennyCrayonNFTs"
+    },
+    {
+        "name": "AlexRoyHere",
+        "hodlCount": "1",
+        "hodlSince": "2021-12-15",
+        "logoLocal": "/assets/hodlers/AlexRoyHere.png",
+        "homepage": "https://twitter.com/AlexRoyHere"
+
     }
 ]
