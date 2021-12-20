@@ -1,6 +1,6 @@
 [
     {
-        "name": "Stupidity Level",
+        "name": "Stupidity level",
         "values": [
             {
                 "name": "Brain dead",
@@ -8,6 +8,10 @@
             },
             {
                 "name": "Science denier",
+                "rarity": "rare"
+            },
+            {
+                "name": "Flat earther",
                 "rarity": "rare"
             },
             {
@@ -48,6 +52,10 @@
                 "rarity": "rare"
             },
             {
+                "name": "Immune to fire damage",
+                "rarity": "rare"
+            },
+            {
                 "name": "Chain smoker",
                 "rarity": "uncommon"
             },
@@ -68,13 +76,25 @@
                 "rarity": "uncommon"
             },
             {
+                "name": "Smartass",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Fitness addict",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Couch potato",
+                "rarity": "uncommon"
+            },
+            {
                 "name": "None",
                 "rarity": "common"
             }
         ]
     },
     {
-        "name": "Favourite Movie",
+        "name": "Favourite movie",
         "values": [
             {
                 "name": "Braindead",
@@ -120,6 +140,98 @@
                 "name": "The Naked Gun",
                 "rarity": "common"
             }
+        ]
+    },
+    {
+        "proposals": [
+            {
+                "name": "Favourite place to sleep",
+                "values": [
+                    {
+                        "name": "Club",
+                        "rarity": "epic"
+                    },
+                    {
+                        "name": "Body bag",
+                        "rarity": "rare"
+                    },
+                    {
+                        "name": "Doesn't sleep",
+                        "rarity": "rare"
+                    },
+                    {
+                        "name": "Toilette",
+                        "rarity": "uncommon"
+                    },
+                    {
+                        "name": "Floor",
+                        "rarity": "uncommon"
+                    },
+                    {
+                        "name": "Couch",
+                        "rarity": "uncommon"
+                    },
+                    {
+                        "name": "Bed",
+                        "rarity": "common"
+                    }
+                ]
+            },
+            {
+                "name": "In a relationship?",
+                "values": [
+                    {
+                        "name": "Afraid of ships",
+                        "rarity": "rare"
+                    },
+                    {
+                        "name": "Thinks he/she is",
+                        "rarity": "uncommon"
+                    },
+                    {
+                        "name": "With his/her hand",
+                        "rarity": "uncommon"
+                    },
+                    {
+                        "name": "No",
+                        "rarity": "common"
+                    }
+                ]
+            },
+            {
+                "name": "Perfect friday night",
+                "values": [
+                    {
+                        "name": "Drink wine and shave armpits",
+                        "rarity": "rare"
+                    },
+                    {
+                        "name": "Play connect 4 with friends",
+                        "rarity": "uncommon"
+                    },
+                    {
+                        "name": "Stare at the wall",
+                        "rarity": "uncommon"
+                    },
+                    {
+                        "name": "Watch Jurassic Park for the 168th time",
+                        "rarity": "uncommon"
+                    }
+                ]
+            },
+            {
+                "name": "Favourite hashtag"
+            },
+            {
+                "name": "Average number of pocket-dials per day"
+            },
+            {
+                "name": "Number of coffe per day"
+            },
+            {
+                "name": "Favourite Nintendo character"
+            },
+            {}
         ]
     }
 ]
