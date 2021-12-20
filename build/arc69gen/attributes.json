@@ -1,0 +1,121 @@
+[
+    {
+        "name": "Stupidity Level",
+        "values": [
+            {
+                "name": "Brain dead",
+                "rarity": "epic"
+            },
+            {
+                "name": "Science denier",
+                "rarity": "rare"
+            },
+            {
+                "name": "Algorand bear",
+                "rarity": "rare"
+            },
+            {
+                "name": "Ethereum bull",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Simple minded",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Math hater",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Just stupid",
+                "rarity": "common"
+            }
+        ]
+    },
+    {
+        "name": "Quirk",
+        "values": [
+            {
+                "name": "Brain eater",
+                "rarity": "epic"
+            },
+            {
+                "name": "Thinks of itself as an insect",
+                "rarity": "rare"
+            },
+            {
+                "name": "NFT addict",
+                "rarity": "rare"
+            },
+            {
+                "name": "Chain smoker",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Night owl",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Early riser",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Gambler",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Clumsy",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "None",
+                "rarity": "common"
+            }
+        ]
+    },
+    {
+        "name": "Favourite Movie",
+        "values": [
+            {
+                "name": "Braindead",
+                "rarity": "epic"
+            },
+            {
+                "name": "Dead Sushi",
+                "rarity": "rare"
+            },
+            {
+                "name": "Monty Python's Life Of Brian",
+                "rarity": "rare"
+            },
+            {
+                "name": "The Godfather: Part III",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "A Clockwork Orange",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Mars Attacks!",
+                "rarity": "common"
+            },
+            {
+                "name": "Sharknado",
+                "rarity": "common"
+            },
+            {
+                "name": "Half Baked",
+                "rarity": "common"
+            },
+            {
+                "name": "Dude, Where’s My Car?",
+                "rarity": "common"
+            },
+            {
+                "name": "The Naked Gun",
+                "rarity": "common"
+            }
+        ]
+    }
+]
