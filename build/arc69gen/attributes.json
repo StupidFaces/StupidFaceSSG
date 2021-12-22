@@ -56,39 +56,47 @@
                 "rarity": "rare"
             },
             {
-                "name": "Chain smoker",
+                "name": "Keeps staring at the wall",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Oedipus complex",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Afraid of ships",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "Narcissist",
                 "rarity": "uncommon"
             },
             {
                 "name": "Night owl",
-                "rarity": "uncommon"
+                "rarity": "common"
             },
             {
                 "name": "Early riser",
-                "rarity": "uncommon"
+                "rarity": "common"
             },
             {
                 "name": "Gambler",
-                "rarity": "uncommon"
+                "rarity": "common"
             },
             {
                 "name": "Clumsy",
-                "rarity": "uncommon"
+                "rarity": "common"
             },
             {
                 "name": "Smartass",
-                "rarity": "uncommon"
+                "rarity": "common"
             },
             {
                 "name": "Fitness addict",
-                "rarity": "uncommon"
+                "rarity": "common"
             },
             {
                 "name": "Couch potato",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "None",
                 "rarity": "common"
             }
         ]
@@ -122,22 +130,26 @@
             },
             {
                 "name": "Mars Attacks!",
-                "rarity": "common"
+                "rarity": "uncommon"
             },
             {
                 "name": "Sharknado",
-                "rarity": "common"
+                "rarity": "uncommon"
             },
             {
                 "name": "Half Baked",
-                "rarity": "common"
+                "rarity": "uncommon"
             },
             {
                 "name": "Dude, Where’s My Car?",
-                "rarity": "common"
+                "rarity": "uncommon"
             },
             {
                 "name": "The Naked Gun",
+                "rarity": "uncommon"
+            },
+            {
+                "name": "None",
                 "rarity": "common"
             }
         ]
@@ -178,7 +190,7 @@
                 ]
             },
             {
-                "name": "In a relationship?",
+                "name": "Relationship status",
                 "values": [
                     {
                         "name": "Afraid of ships",
