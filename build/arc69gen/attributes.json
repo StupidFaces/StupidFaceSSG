@@ -1,249 +1,38 @@
-[
+[{
+        "name": "Stupidity Level",
+        "epic": ["Brain Dead"],
+        "rare": ["Flat Earther", "Algorand Bear", "DEGEN"],
+        "uncommon": ["Ethereum Bull", "Science Denier", "Lost"],
+        "common": ["Just Stupid", "Simple Minded", "Math Hater"]
+    },
     {
-        "name": "Stupidity level",
-        "values": [
-            {
-                "name": "Brain dead",
-                "rarity": "epic"
-            },
-            {
-                "name": "Science denier",
-                "rarity": "rare"
-            },
-            {
-                "name": "Flat earther",
-                "rarity": "rare"
-            },
-            {
-                "name": "Algorand bear",
-                "rarity": "rare"
-            },
-            {
-                "name": "Ethereum bull",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "Simple minded",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "Math hater",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "Just stupid",
-                "rarity": "common"
-            }
-        ]
+        "name": "Character",
+        "epic": ["Leader", "Nonexistant"],
+        "rare": ["Brave", "Self-Confident", "Sensitive", "Lack of Morality"],
+        "uncommon": ["Responsible", "Selfish", "Independent", "Narcissist", "Smartass", "Honest"],
+        "common": ["Humble", "Loyal", "Fair", "Unselfish", "Demanding", "Insensitive", "Impulsive", "Serious", "Clunky"]
     },
     {
         "name": "Quirk",
-        "values": [
-            {
-                "name": "Brain eater",
-                "rarity": "epic"
-            },
-            {
-                "name": "Thinks of itself as an insect",
-                "rarity": "rare"
-            },
-            {
-                "name": "NFT addict",
-                "rarity": "rare"
-            },
-            {
-                "name": "Immune to fire damage",
-                "rarity": "rare"
-            },
-            {
-                "name": "Keeps staring at the wall",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "Oedipus complex",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "Afraid of ships",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "Narcissist",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "Night owl",
-                "rarity": "common"
-            },
-            {
-                "name": "Early riser",
-                "rarity": "common"
-            },
-            {
-                "name": "Gambler",
-                "rarity": "common"
-            },
-            {
-                "name": "Clumsy",
-                "rarity": "common"
-            },
-            {
-                "name": "Smartass",
-                "rarity": "common"
-            },
-            {
-                "name": "Fitness addict",
-                "rarity": "common"
-            },
-            {
-                "name": "Couch potato",
-                "rarity": "common"
-            }
-        ]
+        "epic": ["Brain Eater"],
+        "rare": ["Megalomaniac", "Thinks of itself as an insect", "NFT Addict", "Immune to fire damage", "Stares at the Wall", "Afraid of Ships", "Horoscope Believer"],
+        "uncommon": ["Tree Hugger", "Takes credit for other’s work", "Insists on having the last word", "Vault-O-Phobic", "Can only leave parties as last"],
+        "common": ["Runs after cats all night", "Early Riser", "Talks to Oneself", "Couch Potato", "Can't get anything done", "Lives in its own world",  "Makes silly noises", "Nonsense-News Junkie"]
     },
     {
-        "name": "Favourite movie",
-        "values": [
-            {
-                "name": "Braindead",
-                "rarity": "epic"
-            },
-            {
-                "name": "Dead Sushi",
-                "rarity": "rare"
-            },
-            {
-                "name": "Monty Python's Life Of Brian",
-                "rarity": "rare"
-            },
-            {
-                "name": "The Godfather: Part III",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "Romeo & Juliet",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "A Clockwork Orange",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "Mars Attacks!",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "Sharknado",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "Half Baked",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "Dude, Where’s My Car?",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "The Naked Gun",
-                "rarity": "uncommon"
-            },
-            {
-                "name": "None",
-                "rarity": "common"
-            }
-        ]
+        "name": "Favourite Movie",
+        "epic": ["Braindead"],
+        "rare": ["Dead Sushi", "Monty Python's Life Of Brian", "Meet the Feebles"],
+        "uncommon": ["The Godfather: Part III", "Romeo & Juliet", "A Clockwork Orange", "Mars Attacks!",
+            "Sharknado", "Half Baked", "Dude, Where’s My Car?", "The Naked Gun"
+        ],
+        "common": ["None", "None (Radio)", "None (YouTube)", "None (Twitch)", "None (None)"]
     },
     {
-        "proposals": [
-            {
-                "name": "Favourite place to sleep",
-                "values": [
-                    {
-                        "name": "Club",
-                        "rarity": "epic"
-                    },
-                    {
-                        "name": "Body bag",
-                        "rarity": "rare"
-                    },
-                    {
-                        "name": "Doesn't sleep",
-                        "rarity": "rare"
-                    },
-                    {
-                        "name": "Toilette",
-                        "rarity": "uncommon"
-                    },
-                    {
-                        "name": "Floor",
-                        "rarity": "uncommon"
-                    },
-                    {
-                        "name": "Couch",
-                        "rarity": "uncommon"
-                    },
-                    {
-                        "name": "Bed",
-                        "rarity": "common"
-                    }
-                ]
-            },
-            {
-                "name": "Relationship status",
-                "values": [
-                    {
-                        "name": "Afraid of ships",
-                        "rarity": "rare"
-                    },
-                    {
-                        "name": "Thinks he/she is",
-                        "rarity": "uncommon"
-                    },
-                    {
-                        "name": "With his/her hand",
-                        "rarity": "uncommon"
-                    },
-                    {
-                        "name": "No",
-                        "rarity": "common"
-                    }
-                ]
-            },
-            {
-                "name": "Perfect friday night",
-                "values": [
-                    {
-                        "name": "Drink wine and shave armpits",
-                        "rarity": "rare"
-                    },
-                    {
-                        "name": "Play connect 4 with friends",
-                        "rarity": "uncommon"
-                    },
-                    {
-                        "name": "Stare at the wall",
-                        "rarity": "uncommon"
-                    },
-                    {
-                        "name": "Watch Jurassic Park for the 168th time",
-                        "rarity": "uncommon"
-                    }
-                ]
-            },
-            {
-                "name": "Favourite hashtag"
-            },
-            {
-                "name": "Average number of pocket-dials per day"
-            },
-            {
-                "name": "Number of coffe per day"
-            },
-            {
-                "name": "Favourite Nintendo character"
-            },
-            {}
-        ]
+        "name": "Place to Sleep",
+        "epic": ["Club"],
+        "rare": ["Body Bag", "Doesn't Sleep", "Wilderness"],
+        "uncommon": ["Toilette", "Floor", "Couch", "Front Yard"],
+        "common": ["Bed", "Desk", "Internet Coffee"]
     }
 ]
