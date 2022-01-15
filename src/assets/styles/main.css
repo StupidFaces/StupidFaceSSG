@@ -143,3 +143,28 @@
     cursor: not-allowed;
 
 }
+
+.rarity-text::before {
+    display: inline-block;
+    content: '';
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.rarity-text-common::before {
+    background-color: #c2c2c2;
+}
+
+.rarity-text-epic::before {
+    background-color: #A33F89;
+}
+
+.rarity-text-uncommon::before {
+    background-color: #3f80b4;
+}
+
+.rarity-text-rare::before {
+    background-color: #ffc131;
+}

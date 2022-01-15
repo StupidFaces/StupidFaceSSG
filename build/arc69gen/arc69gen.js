@@ -1,6 +1,7 @@
 /* eslint-disable */
 const glob = require('glob');
 const fs = require('fs');
+const path = require('path');
 const attributes = require('./attributes.json')
 
 const RARITIES = [
@@ -44,7 +45,10 @@ function writeMetaToFile(metaData, facePath) {
 
     //console.log(outputPath)
 
-    fs.writeFileSync(outputPath, JSON.stringify(metaData))
+    if (!fs.existsSync(outputPath)) {
+        ensureDirectoryExistence(outputPath)
+        fs.writeFileSync(outputPath, JSON.stringify(metaData))
+    }
 }
 
 function getFaceName(path) {
@@ -96,4 +100,13 @@ function shuffle(a) {
         a[j] = x;
     }
     return a;
+}
+
+function ensureDirectoryExistence(filePath) {
+    var dirname = path.dirname(filePath);
+    if (fs.existsSync(dirname)) {
+        return true;
+    }
+    ensureDirectoryExistence(dirname);
+    fs.mkdirSync(dirname);
 }

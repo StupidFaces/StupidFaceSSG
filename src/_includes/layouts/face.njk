@@ -1,6 +1,8 @@
 
 {% extends 'layouts/base.njk' %}
 
+
+
 {% block title %}
     {% if adoptionName %}
         <h1 class="font-semibold text-3xl text-center text-gray-800 leading-8">
@@ -23,19 +25,19 @@
                 <ul class="mb-4">
                     <li class="grid grid-cols-2 lg:grid-cols-3">
                         <div>Asset ID:</div>
-                        <div>{{ asaId }}</div>
+                        <div class="col-span-2">{{ asaId }}</div>
                     </li>
                     <li class="grid grid-cols-2 lg:grid-cols-3">
                         <div>Adoption Name:</div>
-                        <div>{{ adoptionName if adoptionName else 'unnamed' }}</div>
+                        <div class="col-span-2">{{ adoptionName if adoptionName else 'unnamed' }}</div>
                     </li>
                     <li class="grid grid-cols-2 lg:grid-cols-3">
                         <div>Blockday:</div>
-                        <div>{{ date | dateToIso }}</div>
+                        <div class="col-span-2">{{ date | dateToIso }}</div>
                     </li>
                     <li class="grid grid-cols-2 lg:grid-cols-3">
                         <div>Adopted by:</div>
-                        <div>
+                        <div class="col-span-2">
                             {% if adopter and adopterAddress %}
                                 <a class="text-link" href="{{ adopterAddress }}" target="_blank">{{ adopter }}</a>
                             {% elseif adopter %}
@@ -49,7 +51,7 @@
                         <div>Face of the Month:</div>
                         {% set count = faceOfTheMonth | getFaceOfTheMonthCount %}
                         {% if not count %}<div>-</div>{% endif %}
-                        <div class="flex -mt-1 h-2 text-red-800 text-2xl font-comic font-bold">
+                        <div class="flex -mt-1 h-2 text-red-800 text-2xl font-comic font-bold col-span-2">
                             {% if count >= 1 %}<div class="w-1 transform rotate-6">l</div>{% endif %}
                             {% if count >= 2 %}<div class="w-1 -mt-0.5 transform -rotate-3">l</div>{% endif %}
                             {% if count >= 3 %}<div class="w-1 transform -rotate-6">l</div>{% endif %}
@@ -57,16 +59,39 @@
                             {% if count >= 5 %}<div class="w-1 transform scale-y-150 rotate-45">l</div>{% endif %}
                         </div>
                     </li>
-                    {% if not adoptionName %}
-                        <li>It's yours? Adopt <a class="text-link" href="/adopt?asset={{ asaId }}">here</a></li>
-                    {% endif %}
+
                 </ul>
+
+                {% if meta | length %}
+                    <div>
+
+                        <h3 class="underline">Attributes</h3>
+                        <ul>
+                            {% for attribute in meta %}
+                                <li class="grid grid-cols-2 lg:grid-cols-3">
+                                    <div>{{ attribute.name }}:</div>
+                                    <div class="rarity-text rarity-text-{{ attribute.rarity }} col-span-2">{{ attribute.value }}</div>
+                                </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                {% endif %}
+
+
+
+
             </div>
             <div>
                 <img title="{{ title }}" alt="{{ title }}" src="https://{{ ipfs }}.ipfs.infura-ipfs.io"/>
-                <div class="text-right">
-                    <a class="text-link" target="_blank" href="https://ab2.gallery/asset/{{ asaId }}">ab2</a> |
-                    <a class="text-link" target="_blank" href="https://www.nftexplorer.app/asset/{{ asaId }}">nftexplorer</a>
+                <div class="inline-flex justify-between w-full">
+                    {% if not adoptionName %}
+                        <div class="mr-auto">Yours? <a class="text-link" href="/adopt?asset={{ asaId }}">Name it!</a></div>
+                    {% endif %}
+                    <div class="ml-auto">
+                        <a class="text-link" target="_blank" href="https://ab2.gallery/asset/{{ asaId }}">ab2</a> |
+                        <a class="text-link" target="_blank" href="https://www.nftexplorer.app/asset/{{ asaId }}">nftexplorer</a>
+                    </div>
                 </div>
             </div>
         </div>
