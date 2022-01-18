@@ -1,38 +1,59 @@
-[{
+[
+    {
         "name": "Stupidity Level",
         "epic": ["Brain Dead"],
-        "rare": ["Flat Earther", "Algorand Bear", "DEGEN"],
-        "uncommon": ["Ethereum Bull", "Science Denier", "Lost"],
+        "rare": ["Flat Earther", "Algorand Bear", "Full Retard"],
+        "uncommon": ["Ethereum Bull", "Science Denier", "Lost", "Degenerated"],
         "common": ["Just Stupid", "Simple Minded", "Math Hater"]
     },
     {
         "name": "Character",
-        "epic": ["Leader", "Nonexistant"],
-        "rare": ["Brave", "Self-Confident", "Sensitive", "Lack of Morality"],
-        "uncommon": ["Responsible", "Selfish", "Independent", "Narcissist", "Smartass", "Honest"],
-        "common": ["Humble", "Loyal", "Fair", "Unselfish", "Demanding", "Insensitive", "Impulsive", "Serious", "Clunky"]
+        "epic": ["Leader", "Megalomaniac"],
+        "rare": ["Brave", "Narcissist", "Hyper Sensitive", "Lack of Morality"],
+        "uncommon": ["Bully", "Selfish", "Independent", "Self-Confident", "Smartass", "Imaginative"],
+        "common": ["Humble", "Loyal", "Fair", "Unselfish", "Demanding", "Insensitive", "Impulsive"]
     },
     {
         "name": "Quirk",
-        "epic": ["Brain Eater"],
-        "rare": ["Megalomaniac", "Thinks of itself as an insect", "NFT Addict", "Immune to fire damage", "Stares at the Wall", "Afraid of Ships", "Horoscope Believer"],
-        "uncommon": ["Tree Hugger", "Takes credit for other’s work", "Insists on having the last word", "Vault-O-Phobic", "Can only leave parties as last"],
-        "common": ["Runs after cats all night", "Early Riser", "Talks to Oneself", "Couch Potato", "Can't get anything done", "Lives in its own world",  "Makes silly noises", "Nonsense-News Junkie"]
+        "epic": ["Brain Eater", "Likes its face stupid"],
+        "rare": [
+            "Thinks of itself as an insect",
+            "NFT Addict",
+            "Immune to fire damage",
+            "Makes up stuff",
+            "Afraid of Ships",
+            "Thinks to be in parallel universe"
+        ],
+        "uncommon": [
+            "Smells like a horse",
+            "Takes credit for other’s work",
+            "Insists on having the last word",
+            "Vault-O-Phobic",
+            "Can only leave party as last",
+            "Fond of Teeth"
+        ],
+        "common": [
+            "Runs after cats all night",
+            "Early Riser",
+            "Talks to Oneself",
+            "Couch Potato",
+            "Can't get anything done",
+            "Makes silly noises",
+            "Nonsense-News Junkie"
+        ]
     },
     {
         "name": "Favourite Movie",
-        "epic": ["Braindead"],
-        "rare": ["Dead Sushi", "Monty Python's Life Of Brian", "Meet the Feebles"],
-        "uncommon": ["The Godfather: Part III", "Romeo & Juliet", "A Clockwork Orange", "Mars Attacks!",
-            "Sharknado", "Half Baked", "Dude, Where’s My Car?", "The Naked Gun"
-        ],
-        "common": ["None", "None (Radio)", "None (YouTube)", "None (Twitch)", "None (None)"]
+        "epic": ["Braindead", "Monty Python's Life Of Brian"],
+        "rare": ["Dead Sushi", "A Clockwork Orange", "Meet the Feebles", "The Godfather: Part III"],
+        "uncommon": ["Romeo & Juliet", "Mars Attacks!", "Sharknado", "Half Baked", "Dude, Where’s My Car?", "The Naked Gun"],
+        "common": ["None", "None (Radio)", "None (YouTube)", "None (Twitch)", "Teletubbies"]
     },
     {
         "name": "Place to Sleep",
-        "epic": ["Club"],
-        "rare": ["Body Bag", "Doesn't Sleep", "Wilderness"],
-        "uncommon": ["Toilette", "Floor", "Couch", "Front Yard"],
-        "common": ["Bed", "Desk", "Internet Coffee"]
+        "epic": ["Club", "Freezer"],
+        "rare": ["Body Bag", "Doesn't Sleep", "Wilderness", "Coffin"],
+        "uncommon": ["Toilette", "Internet Coffee", "Front Yard", "Car"],
+        "common": ["Bed", "Desk", "Floor", "Couch"]
     }
 ]

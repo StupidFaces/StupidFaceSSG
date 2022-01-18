@@ -2,14 +2,9 @@
 const glob = require('glob');
 const fs = require('fs');
 const path = require('path');
-const attributes = require('./attributes.json')
+const attributes = require('./attributes.json');
 
-const RARITIES = [
-    { "epic": 1 },
-    { "rare": 20 },
-    { "uncommon": 30 },
-    { "common": 35 }
-]
+const RARITIES = [{ epic: 1 }, { rare: 20 }, { uncommon: 30 }, { common: 40 }];
 
 const faceFiles = glob.sync(`${module.path}/../../src/faces/stupid-face-*`);
 const faceMetaPath = `${module.path}/../../src/faces/arc69/`;
@@ -18,7 +13,7 @@ const faceMetaPath = `${module.path}/../../src/faces/arc69/`;
 //console.log('faceFiles: ', faceFiles);
 
 for (let facePath of faceFiles) {
-    generateMetaData(facePath)
+    generateMetaData(facePath);
 }
 
 function generateMetaData(facePath) {
@@ -26,17 +21,17 @@ function generateMetaData(facePath) {
     const faceName = getFaceName(facePath);
 
     //randomAttributes
-    const randomAttributes = getRandomAttributes()
+    const randomAttributes = getRandomAttributes();
 
     const faceMetaData = {
-        "Name": faceName,
-        ...randomAttributes
-    }
+        Name: faceName,
+        ...randomAttributes,
+    };
 
-    console.log('PATH: ', facePath)
-    console.log('META: ', faceMetaData)
-        //writeMetaFile
-    writeMetaToFile(faceMetaData, facePath)
+    console.log('PATH: ', facePath);
+    console.log('META: ', faceMetaData);
+    //writeMetaFile
+    writeMetaToFile(faceMetaData, facePath);
 }
 
 function writeMetaToFile(metaData, facePath) {
@@ -46,8 +41,8 @@ function writeMetaToFile(metaData, facePath) {
     //console.log(outputPath)
 
     if (!fs.existsSync(outputPath)) {
-        ensureDirectoryExistence(outputPath)
-        fs.writeFileSync(outputPath, JSON.stringify(metaData))
+        ensureDirectoryExistence(outputPath);
+        fs.writeFileSync(outputPath, JSON.stringify(metaData));
     }
 }
 
@@ -57,7 +52,7 @@ function getFaceName(path) {
 
     for (let line of faceContentLines) {
         if (line.includes('adoptionName')) {
-            faceName = line.split(':')[1].trim()
+            faceName = line.split(':')[1].trim();
         }
     }
     return faceName;
@@ -77,16 +72,16 @@ function getRandomAttributes() {
 }
 
 function getRandomRarity() {
-    const weightedRarities = []
+    const weightedRarities = [];
     for (rarity of RARITIES) {
-        let index = 0
+        let index = 0;
         const rarityName = Object.keys(rarity)[0];
-        const rarityPercentage = rarity[rarityName]
+        const rarityPercentage = rarity[rarityName];
         for (index; index < rarityPercentage; index++) {
-            weightedRarities.push(rarityName)
+            weightedRarities.push(rarityName);
         }
     }
-    const shuffledRarities = shuffle(weightedRarities)
+    const shuffledRarities = shuffle(weightedRarities);
 
     return shuffledRarities[0];
 }
