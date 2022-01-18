@@ -58,11 +58,13 @@ module.exports = {
 
 
 function getRarity(name, value) {
+    const valueWithPlaceholder = value.replace(/#\d*/, '%randomFace%');
+
     for (let attribute of attributesMapping) {
         if (attribute.name === name) {
             for (let rarity of Object.keys(attribute)) {
                 for (let possibleValue of attribute[rarity]) {
-                    if (value === possibleValue) {
+                    if (valueWithPlaceholder === possibleValue) {
                         return rarity;
                     }
                 }

@@ -128,6 +128,18 @@ module.exports = function (eleventyConfig) {
         return returnFaces;
     });
 
+    eleventyConfig.addFilter('replaceFaceIdWithLink', function (text) {
+        let returnText = text;
+        const regexp = new RegExp(/#\d*/, 'ig');
+        const match = text.match(regexp);
+
+        if (match && match[0]) {
+            const faceId = match[0].replace('#','')
+            returnText = text.replace(match[0], `<a href="/stupid-face-${faceId}" class="text-link">${match[0]}</a>`)
+        }
+        return returnText;
+    });
+
     return {
         dir: {
             input: 'src',

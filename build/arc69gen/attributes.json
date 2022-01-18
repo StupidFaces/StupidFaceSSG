@@ -55,5 +55,12 @@
         "rare": ["Body Bag", "Doesn't Sleep", "Wilderness", "Coffin"],
         "uncommon": ["Toilette", "Internet Coffee", "Front Yard", "Car"],
         "common": ["Bed", "Desk", "Floor", "Couch"]
+    },
+    {
+        "name": "Relation",
+        "epic": ["Thinks %randomFace% is stupid"],
+        "rare": ["Suspects %randomFace% is scammer", "Desires %randomFace%'s NFTs"],
+        "uncommon": ["Wants to be %randomFace%", "In belief of relationship with %randomFace%" , "Jealous of %randomFace%"],
+        "common": ["Same mother as %randomFace%", "Same father as %randomFace%", "Likes %randomFace%"]
     }
 ]

@@ -70,7 +70,7 @@
                             {% for attribute in meta %}
                                 <li class="grid grid-cols-2 lg:grid-cols-3">
                                     <div>{{ attribute.name }}:</div>
-                                    <div class="rarity-text rarity-text-{{ attribute.rarity }} col-span-2">{{ attribute.value }}</div>
+                                    <div class="rarity-text rarity-text-{{ attribute.rarity }} col-span-2">{{ attribute.value | replaceFaceIdWithLink | safe }}</div>
                                 </li>
                             {% endfor %}
 

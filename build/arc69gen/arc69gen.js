@@ -9,6 +9,8 @@ const RARITIES = [{ epic: 1 }, { rare: 20 }, { uncommon: 30 }, { common: 40 }];
 const faceFiles = glob.sync(`${module.path}/../../src/faces/stupid-face-*`);
 const faceMetaPath = `${module.path}/../../src/faces/arc69/`;
 
+const faceCount = faceFiles.length;
+
 //console.log('ATTRIBUTES: ', attributes);
 //console.log('faceFiles: ', faceFiles);
 
@@ -64,7 +66,13 @@ function getRandomAttributes() {
         const randomRarity = getRandomRarity();
         const attributeName = attribute.name;
 
-        const randomAttributeValue = shuffle(attribute[randomRarity])[0];
+        let randomAttributeValue = shuffle(attribute[randomRarity])[0];
+
+        if (attributeName === 'Relation') {
+            const randomFace = '#' + (Math.floor((Math.random() * faceCount) + 1)).toString();
+            randomAttributeValue = randomAttributeValue.replace('%randomFace%', randomFace);
+        }
+
         returnAttribues[attributeName] = randomAttributeValue;
     }
 
