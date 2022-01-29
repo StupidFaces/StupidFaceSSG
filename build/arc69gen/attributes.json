@@ -9,7 +9,7 @@
     {
         "name": "Character",
         "epic": ["Leader", "Megalomaniac"],
-        "rare": ["Brave", "Narcissist", "Hyper Sensitive", "Lack of Morality"],
+        "rare": ["Brave", "Narcissist", "Hyper Sensitive", "Lack of Morality", "Controlled by AI"],
         "uncommon": ["Bully", "Selfish", "Independent", "Self-Confident", "Smartass", "Imaginative"],
         "common": ["Humble", "Loyal", "Fair", "Unselfish", "Demanding", "Insensitive", "Impulsive"]
     },
@@ -30,7 +30,8 @@
             "Insists on having the last word",
             "Vault-O-Phobic",
             "Can only leave party as last",
-            "Fond of Teeth"
+            "Fond of Teeth",
+            "Doesn't want to be NFT"
         ],
         "common": [
             "Runs after cats all night",
@@ -45,7 +46,7 @@
     {
         "name": "Favourite Movie",
         "epic": ["Braindead", "Monty Python's Life Of Brian"],
-        "rare": ["Dead Sushi", "A Clockwork Orange", "Meet the Feebles", "The Godfather: Part III"],
+        "rare": ["Dead Sushi", "A Clockwork Orange", "Meet the Feebles", "The Godfather: Part III", "Forest Gump"],
         "uncommon": ["Romeo & Juliet", "Mars Attacks!", "Sharknado", "Half Baked", "Dude, Where’s My Car?", "The Naked Gun"],
         "common": ["None", "None (Radio)", "None (YouTube)", "None (Twitch)", "Teletubbies"]
     },
@@ -58,9 +59,9 @@
     },
     {
         "name": "Relation",
-        "epic": ["Thinks %randomFace% is stupid"],
+        "epic": ["Wants to eat %randomFace%'s Brain","Thinks %randomFace% is stupid"],
         "rare": ["Suspects %randomFace% is scammer", "Desires %randomFace%'s NFTs"],
-        "uncommon": ["Wants to be %randomFace%", "In belief of relationship with %randomFace%" , "Jealous of %randomFace%"],
+        "uncommon": ["Wants to be %randomFace%", "In belief of relationship with %randomFace%" , "Keeps calling %randomFace%"],
         "common": ["Same mother as %randomFace%", "Same father as %randomFace%", "Likes %randomFace%"]
     }
 ]

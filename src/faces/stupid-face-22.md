@@ -1,6 +1,6 @@
 ---
 title: "Stupid Face #22"
-asaId: 361563375
+asaId: 361767351
 unit: "FACE#22"
 ipfs: bafkreifccrdexzsok6k46r7mp5yict6dnkes7xdukqbkdqmuwv7qein2py
 description: "Stupid Face #22"

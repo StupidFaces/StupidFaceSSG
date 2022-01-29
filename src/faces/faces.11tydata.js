@@ -6,10 +6,10 @@ module.exports = {
         titleTag: (data) => (data.adoptionName ? `${data.adoptionName} - ${data.title}` : data.title),
         id: (data) => data.page.fileSlug.split('-')[2],
         meta: (data) => {
-            const arc69metaFilePath = `${module.path}/arc69/${data.page.fileSlug}.json`;
+            const arc69metaFilePath = `${module.path}/arc69/${data.asaId}.json`;
             const metaArray = [];
             if (fs.existsSync(arc69metaFilePath)) {
-                const metaJson = JSON.parse(fs.readFileSync(arc69metaFilePath));
+                const metaJson = JSON.parse(fs.readFileSync(arc69metaFilePath))['properties'];
 
                 Object.keys(metaJson).forEach((key) => {
                     const metaObject = {
@@ -26,13 +26,13 @@ module.exports = {
             return metaArray
         },
         pagination: (data) => {
+            const thisFileSlug = data.page.fileSlug;
+
             const pagination = {
                 next: null,
                 previous: null,
-                this: data.page.fileSlug
+                this: thisFileSlug
             }
-
-            const thisFileSlug = data.page.fileSlug;
 
             const thisId = parseInt(thisFileSlug.split('-')[2]);
 

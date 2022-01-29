@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const attributes = require('./attributes.json');
 
-const RARITIES = [{ epic: 1 }, { rare: 20 }, { uncommon: 30 }, { common: 40 }];
+const RARITIES = [{ epic: 1 }, { rare: 17 }, { uncommon: 30 }, { common: 40 }];
 
 const faceFiles = glob.sync(`${module.path}/../../src/faces/stupid-face-*`);
 const faceMetaPath = `${module.path}/../../src/faces/arc69/`;
@@ -26,8 +26,13 @@ function generateMetaData(facePath) {
     const randomAttributes = getRandomAttributes();
 
     const faceMetaData = {
-        Name: faceName,
-        ...randomAttributes,
+        standard: "arc69",
+        description: "Just a Stupid Face.",
+        external_url: getFaceUrl(facePath),
+        properties: {
+            Name: faceName,
+            ...randomAttributes,
+        }
     };
 
     console.log('PATH: ', facePath);
@@ -37,7 +42,7 @@ function generateMetaData(facePath) {
 }
 
 function writeMetaToFile(metaData, facePath) {
-    const outputFileName = facePath.split('/').slice(-1)[0].split('.')[0] + '.json';
+    const outputFileName = `${getFaceAsaId(facePath)}.json`;
     const outputPath = faceMetaPath + outputFileName;
 
     //console.log(outputPath)
@@ -58,6 +63,23 @@ function getFaceName(path) {
         }
     }
     return faceName;
+}
+
+function getFaceUrl(path) {
+    const faceSlug = path.split('/').at(-1).split('.')[0];
+    return `https://stupidface.art/${faceSlug}/`;
+}
+
+function getFaceAsaId(path) {
+    const faceContentLines = fs.readFileSync(path).toString().split('\n');
+
+    for (let line of faceContentLines) {
+        if (line.includes('asaId')) {
+            return line.split(':')[1].trim();
+        }
+    }
+
+    throw Error(`ASA ID not found for: ${path}`)
 }
 
 function getRandomAttributes() {
