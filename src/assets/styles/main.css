@@ -147,10 +147,9 @@
 .rarity-text::before {
     display: inline-block;
     content: '';
-    width: 15px;
+    width: 5px;
     height: 15px;
     margin-right: 5px;
-    border-radius: 10px;
 }
 
 .rarity-text-common::before {

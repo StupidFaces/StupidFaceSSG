@@ -1,15 +1,15 @@
 [
     {
         "name": "Stupidity Level",
-        "epic": ["Brain Dead"],
+        "epic": ["Brain Dead", "Dogecoin Maximalist"],
         "rare": ["Flat Earther", "Algorand Bear", "Full Retard"],
         "uncommon": ["Ethereum Bull", "Science Denier", "Lost", "Degenerated"],
         "common": ["Just Stupid", "Simple Minded", "Math Hater"]
     },
     {
         "name": "Character",
-        "epic": ["Leader", "Megalomaniac"],
-        "rare": ["Brave", "Narcissist", "Hyper Sensitive", "Lack of Morality", "Controlled by AI"],
+        "epic": ["Wannabe Leader", "Megalomaniac"],
+        "rare": ["Philosophical", "Narcissist", "Hyper Sensitive", "Lack of Morality", "Controlled by AI"],
         "uncommon": ["Bully", "Selfish", "Independent", "Self-Confident", "Smartass", "Imaginative"],
         "common": ["Humble", "Loyal", "Fair", "Unselfish", "Demanding", "Insensitive", "Impulsive"]
     },
@@ -19,6 +19,7 @@
         "rare": [
             "Thinks of itself as an insect",
             "NFT Addict",
+            "Keeps creating strange Paintings",
             "Immune to fire damage",
             "Makes up stuff",
             "Afraid of Ships",
@@ -26,12 +27,12 @@
         ],
         "uncommon": [
             "Smells like a horse",
-            "Takes credit for other’s work",
+            "Takes credit for other's work",
             "Insists on having the last word",
             "Vault-O-Phobic",
             "Can only leave party as last",
-            "Fond of Teeth",
-            "Doesn't want to be NFT"
+            "Fond of its Teeth",
+            "Wants to be no NFT"
         ],
         "common": [
             "Runs after cats all night",
@@ -46,21 +47,21 @@
     {
         "name": "Favourite Movie",
         "epic": ["Braindead", "Monty Python's Life Of Brian"],
-        "rare": ["Dead Sushi", "A Clockwork Orange", "Meet the Feebles", "The Godfather: Part III", "Forest Gump"],
-        "uncommon": ["Romeo & Juliet", "Mars Attacks!", "Sharknado", "Half Baked", "Dude, Where’s My Car?", "The Naked Gun"],
+        "rare": ["Dead Sushi", "A Clockwork Orange", "Meet the Feebles", "The Godfather: Part III", "Forest Gump", "The Exorcist"],
+        "uncommon": ["Romeo & Juliet", "Mars Attacks!", "Sharknado", "Half Baked", "Dude, Where's My Car?", "The Naked Gun", "Starship Troopers"],
         "common": ["None", "None (Radio)", "None (YouTube)", "None (Twitch)", "Teletubbies"]
     },
     {
         "name": "Place to Sleep",
-        "epic": ["Club", "Freezer"],
-        "rare": ["Body Bag", "Doesn't Sleep", "Wilderness", "Coffin"],
-        "uncommon": ["Toilette", "Internet Coffee", "Front Yard", "Car"],
-        "common": ["Bed", "Desk", "Floor", "Couch"]
+        "epic": ["Club", "Doesn't Sleep"],
+        "rare": ["Body Bag", "Freezer", "Wilderness", "Coffin"],
+        "uncommon": ["Toilette", "Internet Coffee", "Front Yard", "Stroller"],
+        "common": ["Bed", "Desk", "Floor", "Couch", "Car"]
     },
     {
         "name": "Relation",
         "epic": ["Wants to eat %randomFace%'s Brain","Thinks %randomFace% is stupid"],
-        "rare": ["Suspects %randomFace% is scammer", "Desires %randomFace%'s NFTs"],
+        "rare": ["Suspects %randomFace% is scammer", "Desires %randomFace%'s NFTs", "Owes %randomFace% some NFT"],
         "uncommon": ["Wants to be %randomFace%", "In belief of relationship with %randomFace%" , "Keeps calling %randomFace%"],
         "common": ["Same mother as %randomFace%", "Same father as %randomFace%", "Likes %randomFace%"]
     }
