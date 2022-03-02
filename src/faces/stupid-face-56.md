@@ -6,6 +6,7 @@ ipfs: bafkreiedhmjotngoauf24epwvbgniobwecobzk5con2chsjx56fdky6qiq
 description: "Stupid Face #56"
 date: 2021-12-10T22:28:20Z
 faceOfTheMonth:
+    - 2022-03
 adoptionName: Sonny
 adopter: "Null"
 adopterAddress: "https://twitter.com/nft_null"
