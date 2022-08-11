@@ -6,4 +6,5 @@ ipfs: bafkreifc3234hszt2j4pjeuntxjczchfwqe55aapstw55hnfmzfsenduzq
 description: "Stupid Face #38"
 date: 2021-11-07T12:05:00Z
 faceOfTheMonth:
+    - 2022-08
 ---
