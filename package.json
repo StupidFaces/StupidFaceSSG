@@ -18,7 +18,8 @@
     "format": "run-s format:*",
     "lint": "eslint --ext .js .",
     "shuffle": "node ./build/shuffleBot/shuffleBot.js",
-    "gen:meta": "node ./build/arc69gen/arc69gen.js"
+    "gen:meta": "node ./build/arc69gen/arc69gen.js",
+    "gen:blockchaindata": "node ./build/blockchaindata/getImages.js"
   },
   "license": "ISC",
   "devDependencies": {
