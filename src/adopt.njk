@@ -105,7 +105,7 @@ title: Adopt Face
         }
 
         function preloadImage(selectedOption) {
-            var imageUrl = `/assets/faces/${selectedOption.dataset.ipfs}`;
+            var imageUrl = `/assets/faces/${selectedOption.dataset.ipfs}.png`;
             var title = selectedOption.innerHTML;
             var img = new Image();
             img.src = imageUrl;

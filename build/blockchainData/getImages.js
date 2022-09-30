@@ -22,7 +22,7 @@ async function main() {
         //let assetInfo = await indexerClient.searchForAssets().index(assetId).do();
         //let assetTxs = await indexerClient.lookupAssetTransactions(884254614).do();
         
-        await syncMarkdown(assetId, assetIpfsHash);
+        //await syncMarkdown(assetId, assetIpfsHash);
     }
 
 }
@@ -59,7 +59,7 @@ function downloadImage(ipfsHash) {
             console.log(`Retrying: ${ipfsHash}`)
             downloadImage(ipfsHash)
         } else {
-            res.pipe(fs.createWriteStream(`${imageOutFolder}/${ipfsHash}`));
+            res.pipe(fs.createWriteStream(`${imageOutFolder}/${ipfsHash}.png`));
         }
     });
 }

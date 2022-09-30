@@ -10,7 +10,7 @@
         {% set filteredFaces = collections.faces | getFacesByPhysicalIds(shuffleFaces) %}
         {% for face in filteredFaces | reverse %}
             <a href="/{{ face.fileSlug }}" class="relative group transform hover:scale-105 transition-all hover:shadow-lg">
-                <img title="{{ face.data.titleTag }}" alt="{{ face.data.titleTag }}" src="/assets/faces/{{ face.data.ipfs }}"/>
+                <img title="{{ face.data.titleTag }}" alt="{{ face.data.titleTag }}" src="/assets/faces/{{ face.data.ipfs }}.png"/>
                 <div class="text-red-800 text-sm font-bold absolute top-1 left-2">{{ winners[face.data.id].slice(0,10) + '...' if winners[face.data.id] }}</div>
             </a>
         {% endfor %}
