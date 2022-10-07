@@ -19,7 +19,8 @@
     "lint": "eslint --ext .js .",
     "shuffle": "node ./build/shuffleBot/shuffleBot.js",
     "gen:meta": "node ./build/arc69gen/arc69gen.js",
-    "gen:blockchaindata": "node ./build/blockchaindata/getImages.js"
+    "gen:blockchaindata": "node ./build/blockchaindata/getImages.js",
+    "sync:dev:faceOfTheMonth": "cross-env NODE_ENV=development node ./build/database/syncFaceOfTheMonth.js"
   },
   "license": "ISC",
   "devDependencies": {
@@ -32,6 +33,7 @@
     "css-loader": "^5.2.6",
     "cssnano": "^5.0.4",
     "date-fns": "^2.21.3",
+    "dotenv": "^16.0.3",
     "eleventy-plugin-lazyimages": "^2.1.0",
     "eslint": "^7.27.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -45,6 +47,7 @@
     "lint-staged": "^11.0.0",
     "mini-css-extract-plugin": "^1.6.0",
     "npm-run-all": "^4.1.5",
+    "pg": "^8.8.0",
     "postcss-loader": "^5.3.0",
     "prettier": "^2.3.0",
     "rimraf": "^3.0.2",
