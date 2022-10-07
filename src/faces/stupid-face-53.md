@@ -9,7 +9,4 @@ faceOfTheMonth:
 adoptionName: aunnaemeka
 adopter: "aunnaemeka"
 adopterAddress: "https://twitter.com/aunnaemeka"
-firstAdoptionName: Simino
-firstAdopter: "simi_nft"
-firstAdopterAddress: "https://twitter.com/simi_nft"
 ---

@@ -19,8 +19,10 @@
     "lint": "eslint --ext .js .",
     "shuffle": "node ./build/shuffleBot/shuffleBot.js",
     "gen:meta": "node ./build/arc69gen/arc69gen.js",
-    "gen:blockchaindata": "node ./build/blockchaindata/getImages.js",
-    "sync:dev:faceOfTheMonth": "cross-env NODE_ENV=development node ./build/database/syncFaceOfTheMonth.js"
+    "gen:markdown:dev": "cross-env NODE_ENV=development node ./build/blockchaindata/getImages.js",
+    "gen:markdown:prod": "NODE_ENV=production node ./build/blockchaindata/getImages.js",
+    "upload:dev:faceOfTheMonth": "cross-env NODE_ENV=development node ./build/database/syncFaceOfTheMonth.js",
+    "upload:prod:faceOfTheMonth": "cross-env NODE_ENV=production node ./build/database/syncFaceOfTheMonth.js"
   },
   "license": "ISC",
   "devDependencies": {
