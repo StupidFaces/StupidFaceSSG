@@ -30,7 +30,7 @@ async function main() {
         const assetUrl = asset['params']['url'];
         const assetId = asset['index'];
         const assetIpfsHash = assetUrl.split('/').at(-1);
-        //downloadImage(assetIpfsHash);
+        downloadImage(assetIpfsHash);
         //let assetInfo = await indexerClient.searchForAssets().index(assetId).do();
         //let assetTxs = await indexerClient.lookupAssetTransactions(884254614).do();
         
