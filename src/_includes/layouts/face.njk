@@ -25,19 +25,19 @@
                 <ul class="mb-4">
                     <li class="grid grid-cols-2 lg:grid-cols-3">
                         <div>Asset ID:</div>
-                        <div class="col-span-2">{{ asaId }}</div>
+                        <div class="lg:col-span-2">{{ asaId }}</div>
                     </li>
                     <li class="grid grid-cols-2 lg:grid-cols-3">
                         <div>Adoption Name:</div>
-                        <div class="col-span-2">{{ adoptionName if adoptionName else 'unnamed' }}</div>
+                        <div class="lg:col-span-2">{{ adoptionName if adoptionName else 'unnamed' }}</div>
                     </li>
                     <li class="grid grid-cols-2 lg:grid-cols-3">
                         <div>Blockday:</div>
-                        <div class="col-span-2">{{ date | dateToIso }}</div>
+                        <div class="lg:col-span-2">{{ date | dateToIso }}</div>
                     </li>
                     <li class="grid grid-cols-2 lg:grid-cols-3">
                         <div>Adopted by:</div>
-                        <div class="col-span-2">
+                        <div class="lg:col-span-2">
                             {% if adopter and adopterAddress %}
                                 <a class="text-link" href="{{ adopterAddress }}" target="_blank">{{ adopter }}</a>
                             {% elseif adopter %}
@@ -51,7 +51,7 @@
                         <div>Face of the Month:</div>
                         {% set count = faceOfTheMonth | getFaceOfTheMonthCount %}
                         {% if not count %}<div>-</div>{% endif %}
-                        <div class="flex -mt-1 h-2 text-red-800 text-2xl font-comic font-bold col-span-2">
+                        <div class="flex -mt-1 h-2 text-red-800 text-2xl font-comic font-bold lg:col-span-2">
                             {% if count >= 1 %}<div class="w-1 transform rotate-6">l</div>{% endif %}
                             {% if count >= 2 %}<div class="w-1 -mt-0.5 transform -rotate-3">l</div>{% endif %}
                             {% if count >= 3 %}<div class="w-1 transform -rotate-6">l</div>{% endif %}
@@ -70,7 +70,7 @@
                             {% for attribute in meta %}
                                 <li class="grid grid-cols-2 lg:grid-cols-3">
                                     <div>{{ attribute.name }}:</div>
-                                    <div class="col-span-2">
+                                    <div class="lg:col-span-2">
                                         <span class="rarity-text rarity-text-{{ attribute.rarity }}" title="{{ attribute.rarity }}">{{ attribute.value | replaceFaceIdWithLink | safe }}</span>
                                     </div>
                                 </li>

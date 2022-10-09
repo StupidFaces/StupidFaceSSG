@@ -38,11 +38,19 @@
 <div class="max-w-screen-lg px-3 mx-auto h-full grid template-rows-min-content ">
     <div class="">
         <div class="header">
-
             {% block title %}
-                <h1 class="font-semibold text-3xl text-center text-gray-800">
-                    {{ title if title else site.title }}
-                </h1>
+                {% if isHomepage %}
+                    <h1 class="font-semibold text-3xl text-center text-gray-800 leading-8">
+                        <div class="font-medium text-2xl text-gray-600">
+                            {{ site.site_top_title }}
+                        </div>
+                        {{ site.title }}
+                    </h1>
+                {% else %}
+                    <h1 class="font-semibold text-3xl text-center text-gray-800">
+                        {{ title if title else site.title }}
+                    </h1>
+                {% endif %}
             {% endblock %}
 
         </div>
@@ -76,10 +84,15 @@
                     </a>
                 </li>
                 <li class="mr-6 flex">
+                    <a class="flex items-center" title="Stupid Faces Discord Server" target="_blank" href="https://discord.com/invite/XgjVCvBYs9">
+                        <img class="nav-icon h-5 w-5" src="/assets/images/discord-logo.png">
+                    </a>
+                </li>
+                <!--li class="mr-6 flex">
                     <a class="flex items-center" title="Stupid Faces on AB2 Gallery" target="_blank" href="https://ab2.gallery/u/stupid+faces">
                         <img class="nav-icon h-5 w-5" src="/assets/images/ab2-logo.png">
                     </a>
-                </li>
+                </li-->
                 <li class="mr-6 flex">
                     <a class="flex items-center" title="Stupid Faces on NFTExplorer" target="_blank" href="https://www.nftexplorer.app/collection?creator=KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q">
                         <img class="nav-icon rounded-3xl h-5 w-5" src="/assets/images/nft-explorer-logo.png">

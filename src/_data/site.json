@@ -1,6 +1,7 @@
 {
     "site_name": "Stupid Faces",
-    "title": "Home of Stupid Faces",
+    "title": "Stupid Faces",
+    "site_top_title": "Home of",
     "description": "The most Stupid Faces on Algorand",
     "url": "https://example.com",
     "locale": "en",
