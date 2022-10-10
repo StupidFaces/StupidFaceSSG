@@ -8,13 +8,21 @@ title: Hodlers
 {% block content %}
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
         {% for hodler in hodlers | getSortedHodlers %}
-            <a href="{{ hodler.homepage }}" target="_blank" class="bg-stupid-primary relative transform hover:scale-105 transition-all hover:shadow-lg hodlerLink">
+            <a href="{{ hodler.homepage }}" target="_blank" class="bg-stupid-primary relative transform hover:scale-105 transition-all hover:shadow-lg {{ "hodlerLink" if hodler.profileImage }}">
                 <div class="p-4 text-stupid-secondary">
-                    <img title="{{ hodler.name }}" alt="{{ hodler.name }}" src="{{ hodler | getLogoUrl }}" />
+                    {% if hodler | getLogoUrl %}
+                    <div class="overflow-hidden aspect-square">
+                        <img title="{{ hodler.name }}" alt="{{ hodler.name }}" src="{{ hodler | getLogoUrl }}" class="h-full w-full object-cover" />
+                    </div>
+                    {% else %}
+                    <div class="overflow-hidden aspect-square">
+                        <img title="{{ hodler.name }}" alt="{{ hodler.name }}" src="/logo800x800.png" class="h-full w-full object-cover" />
+                    </div>
+                    {% endif %}
                     <div class="flex justify-between mt-4">
                         <div class="">{{ hodler.name }}</div>
                         <div class="-mt-1 mr-1">
-                            {{ doodleCounter.doodleCounter(hodler.hodlCount, 'text-stupid-secondary') }}
+                            {{ doodleCounter.doodleCounter(hodler.hodleCount, 'text-stupid-secondary') }}
                         </div>
                     </div>
                 </div>

@@ -167,3 +167,7 @@
 .rarity-text-rare::before {
     background-color: #ffc131;
 }
+
+.aspect-square {
+    aspect-ratio: 1/1;
+}

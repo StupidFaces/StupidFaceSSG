@@ -7,17 +7,6 @@ const faceUtils = require('./lib/faceUtils')
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight);
 
-    eleventyConfig.addPlugin(lazyImagesPlugin, {
-        transformImgPath: (imgPath) => {
-            if (imgPath.startsWith('http://') || imgPath.startsWith('https://')) {
-                // Handle remote file
-                return imgPath;
-            } else {
-                return `./src/${imgPath}`;
-            }
-        },
-    });
-
     eleventyConfig.setEjsOptions({
         rmWhitespace: true,
         context: {
@@ -98,15 +87,17 @@ module.exports = function (eleventyConfig) {
             logoUrl = `https://cloudflare-ipfs.com/ipfs/${hodler.logoIpfs}`;
         } else if (hodler['logoLocal']) {
             logoUrl = hodler['logoLocal'];
+        } else if (hodler['profileImage']) {
+            logoUrl = hodler['profileImage']
         }
         return logoUrl;
     });
 
     eleventyConfig.addFilter('getSortedHodlers', function (hodlers) {
-        let adjustedHodlers = hodlers.filter((hodler) => parseInt(hodler.hodlCount) > 0);
+        let adjustedHodlers = hodlers.filter((hodler) => parseInt(hodler.hodleCount) > 0);
 
         adjustedHodlers = adjustedHodlers.sort(function (hodlerA, hodlerB) {
-            return parseInt(hodlerB.hodlCount) - parseInt(hodlerA.hodlCount);
+            return parseInt(hodlerB.hodleCount) - parseInt(hodlerA.hodleCount);
         });
 
         return adjustedHodlers;

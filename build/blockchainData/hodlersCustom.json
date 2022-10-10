@@ -1,0 +1,115 @@
+[
+    {
+        "name": "UFwOah",
+        "publicKey": "RXFBJEAJRX4BBBLNZHUCBWA6YAMQBZQ2YETYNWUQV35R2QMC2XRDVXVWIE",
+        "hodleCount": "3",
+        "hodleSince": "2021-11",
+        "logoLocal": "/assets/hodlers/3DwOah_05.png",
+        "homepage": "https://ufwoah.space/"
+    },
+    {
+        "name": "CryptoBunny",
+        "publicKey": "BNYSETPFTL2657B5RCSW64A3M766GYBVRV5ALOM7F7LIRUZKBEOGF6YSO4",
+        "hodleCount": "1",
+        "hodleSince": "2021-10-08",
+        "logoLocal": "/assets/hodlers/CryptoBunny.png",
+        "logoIpfs": "QmfY8KDYSuNeAq46NQzwojTkQy6yNRBNJS6rpdXpKtH7rB",
+        "homepage": "https://twitter.com/CryptoBunnyNFT"
+    },
+    {
+        "name": "dhow",
+        "publicKey": "FUTU4WZ745JBR6R6Z7ORHUHUDJ3FML2XWGIQLF5LSFIE64DI37XPWZRU7Q",
+        "hodleCount": "1",
+        "hodleSince": "2021-10-16",
+        "logoLocal": "/assets/hodlers/dhow.jfif",
+        "logoIpfs": "QmTssSsDc2TQDsnkS6UUZrjrQ4L89hoQZvsnbyTRnCoQUV",
+        "homepage": "https://dlinktree.com/dhowdao"
+    },
+    {
+        "name": "ValueVision",
+        "hodleCount": "6",
+        "hodleSince": "2021-10-15",
+        "logoIpfs": "QmYhHYN4tgz2FuWJCHUopKFWEvxiQ91tDruomdWWCEczND",
+        "homepage": "https://twitter.com/realvaluevision"
+    },
+    {
+        "name": "Dope Cats",
+        "hodleCount": "0",
+        "hodleSince": "2021-10-09",
+        "logoIpfs": "bafkreigmwlltevboeizaq7nouxamriajcyj2jjuyfteo7wsz53boqqt5iy",
+        "homepage": "https://twitter.com/dopecat069"
+    },
+    {
+        "name": "Alnimator",
+        "publicKey": "WX4GUTLAGP2CZ5YDJADD3PGJ3ILIXMYIIWKG7UUKT7T7DK24QLN65ULUPQ",
+        "hodleCount": "1",
+        "hodleSince": "2021-11-13",
+        "logoLocal": "/assets/hodlers/Alnimator.png",
+        "homepage": "https://twitter.com/aLnimator"
+    },
+    {
+        "name": "IRLalgo",
+        "hodleCount": "2",
+        "hodleSince": "2021-10-08",
+        "logoIpfs": "QmXudbHjJmKdaBFLAquohAS2TwFuQR1wy9xon1X5FKKgg8",
+        "homepage": "https://twitter.com/IRLalgo"
+    },
+    {
+        "name": "Argonaut5000",
+        "hodleCount": "1",
+        "hodleSince": "2021-10-16",
+        "logoIpfs": "bafkreiachaniurq63uzzja5nnrbgnja2vh6n7qn7gaut55ff4dpayd27ye",
+        "homepage": "https://argonaut5000.com/"
+    },
+    {
+        "name": "Null",
+        "hodleCount": "2",
+        "hodleSince": "2021-11-18",
+        "logoIpfs": "QmUafXURodNNf5YiiBtX8rMxeYsfH7KW76UVUGNc4cCWZg",
+        "homepage": "https://twitter.com/nft_null"
+    },
+    {
+        "name": "imrubex",
+        "hodleCount": "3",
+        "hodleSince": "2021-11-17",
+        "logoIpfs": "bafybeighwd54rygm7cul2e5owtbiqtcpzcj27abw6vxtryell5g2vyigsa",
+        "homepage": "https://twitter.com/imrubex"
+    },
+    {
+        "name": "cryptoguy559",
+        "hodleCount": "1",
+        "hodleSince": "2021-10-10",
+        "logoIpfs": "bafkreiewm2f5g7vut5r7gpic4ptktb77f263oa7om6cbesfxhclu6gnxfa",
+        "homepage": "https://twitter.com/cryptoguy559"
+    },
+    {
+        "name": "BennyNFTs",
+        "hodleCount": "1",
+        "hodleSince": "2021-11-21",
+        "logoLocal": "/assets/hodlers/BennyNFTs.png",
+        "homepage": "https://twitter.com/BennyNFTs"
+    },
+    {
+        "name": "Simino",
+        "hodleCount": "1",
+        "hodleSince": "2021-12-01",
+        "logoIpfs": "bafkreifcvckjllt5jzsroenqyquzqvemyhvoqaffsg4dergeca7cq33z3e",
+        "homepage": "https://twitter.com/simi_nft"
+    },
+    {
+        "name": "Penny Crayon NFTs",
+        "hodleCount": "1",
+        "hodleSince": "2021-12-11",
+        "logoLocal": "/assets/hodlers/PennyCrayonNFTs.png",
+        "homepage": "https://twitter.com/PennyCrayonNFTs"
+    },
+    {
+        "name": "AlexRoyHere",
+        "publicKey": "5I36NJYX4QR34DSPYXOY3GN7KHA5GELYMOJFOAANLM6XZTQZ65KPOEERSY",
+        "hodleCount": "1",
+        "hodleSince": "2021-12-15",
+        "logoLocal": "/assets/hodlers/AlexRoyHere.png",
+        "homepage": "https://twitter.com/AlexRoyHere"
+
+    }
+]
