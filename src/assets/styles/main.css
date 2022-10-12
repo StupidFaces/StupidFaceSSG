@@ -4,6 +4,24 @@
 
 @tailwind utilities;
 
+/* latin */
+@font-face {
+    font-family: "Comic Neue";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/public/assets/fonts/comic_neue.woff2") format("woff2");
+}
+
+
+@font-face {
+    font-family: "Itim";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/public/assets/fonts/itim_latin.woff2") format("woff2");
+}
+
 .content {
     @apply tracking-wider leading-8 text-xl;
 }

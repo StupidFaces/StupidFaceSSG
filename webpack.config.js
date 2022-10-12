@@ -47,6 +47,20 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
             },
             {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                use: [
+                    {
+                        loader: 'file-loader?name=/fonts/[name].[ext]',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: './assets/fonts/'
+                        }
+                    },
+
+                ]
+
+            },
+            {
                 test: /\.(gif|png|jpg|jpeg)$/i,
                 use: [
                     {
