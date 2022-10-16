@@ -35,23 +35,21 @@ module.exports = {
             }
 
             const thisId = parseInt(thisFileSlug.split('-')[2]);
-
             const nextId = (thisId + 1).toString();
             const previousId = (thisId - 1).toString();
 
-            const nextIdSlug = thisFileSlug.replace(thisId, nextId)
-            const previousIdSlug = thisFileSlug.replace(thisId, previousId)
+            for (faceData of data.collections.faces) {
+                const fileSlugArray = faceData.fileSlug.split('-');
 
-            if (fs.existsSync(`${module.path}/${nextIdSlug}.md`)) {
-                pagination.next = nextIdSlug;
-            }
-
-            if (fs.existsSync(`${module.path}/${previousIdSlug}.md`)) {
-                pagination.previous = previousIdSlug;
+                if (fileSlugArray[2] == nextId) {
+                    pagination.next = faceData.fileSlug;
+                }
+                if (fileSlugArray[2] == previousId) {
+                    pagination.previous = faceData.fileSlug;
+                }
             }
 
             return pagination;
-
         }
     },
 };

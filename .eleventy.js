@@ -3,6 +3,7 @@ const dateFns = require('date-fns');
 const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const faceUtils = require('./lib/faceUtils')
+const inspect = require("util").inspect;
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight);
@@ -129,12 +130,19 @@ module.exports = function (eleventyConfig) {
             const faceId = match[0].replace('#','');
             const faceDisplayName = faceUtils.getFaceNameById(faceId, match[0]);
 
-
             returnText = text.replace(match[0], `<a href="/stupid-face-${faceId}" class="text-link">${faceDisplayName}</a>`)
+
+            if (faceId == '75') {
+                returnText = text.replace(match[0], `<a href="/stupid-nalgo-${faceId}" class="text-link">${faceDisplayName}</a>`)
+            }
         }
         return returnText;
     });
 
+    
+
+    eleventyConfig.addFilter("debug", (content) => `${inspect(content)}`);
+    
     return {
         dir: {
             input: 'src',

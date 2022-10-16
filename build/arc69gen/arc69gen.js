@@ -7,7 +7,7 @@ const faceUtils = require('../../lib/faceUtils.js');
 
 const RARITIES = [{ epic: 1 }, { rare: 18 }, { uncommon: 30 }, { common: 40 }];
 
-const faceFiles = glob.sync(`${module.path}/../../src/faces/stupid-face-*`);
+const faceFiles = glob.sync(`${module.path}/../../src/faces/stupid-*`);
 const faceMetaPath = `${module.path}/../../src/faces/arc69/`;
 
 const faceCount = faceFiles.length;
