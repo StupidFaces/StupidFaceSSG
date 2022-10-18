@@ -47,7 +47,7 @@
     },
     {
         "name": "Favourite Movie",
-        "epic": ["Braindead", "Monty Python's Life Of Brian"],
+        "epic": ["Braindead", "Monty Python's Life Of Brian", "Anything about drugs"],
         "rare": ["Dead Sushi", "A Clockwork Orange", "Meet the Feebles", "The Godfather: Part III", "Forest Gump", "The Exorcist"],
         "uncommon": ["Romeo & Juliet", "Mars Attacks!", "Sharknado", "Half Baked", "Dude, Where's My Car?", "The Naked Gun", "Starship Troopers"],
         "common": ["None", "None (Radio)", "None (YouTube)", "None (Twitch)", "Teletubbies"]
