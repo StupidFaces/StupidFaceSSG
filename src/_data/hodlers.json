@@ -166,5 +166,12 @@
         "name": "algoribbits.algo",
         "profileImage": "/assets/hodlers/algoribbits_algo.png",
         "homepage": "https://app.nf.domains/name/algoribbits.algo"
+    },
+    {
+        "publicKey": "EE7CRFODWJDOXUVPVBIDYHKSRJHNZ4R3B6AKHBU5VRB5YBDXGVSZULEYIQ",
+        "hodleCount": 1,
+        "name": "quackquackbitches.algo",
+        "profileImage": "/assets/hodlers/quackquackbitches_algo.png",
+        "homepage": "https://app.nf.domains/name/quackquackbitches.algo"
     }
 ]

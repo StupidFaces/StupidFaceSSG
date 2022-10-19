@@ -94,12 +94,12 @@ async function getNfdImage(nfdData) {
 
     imageUrl = imageUrl.replace('ipfs://', 'https://ipfs.io/ipfs/');
 
-    //const response = await fetch(imageUrl);
+    const response = await fetch(imageUrl);
 
-    //if(response.status == 200) {
+    if(response.status == 200) {
         //Download image
-        //await response.body.pipe(fs.createWriteStream(`${PUBLIC_PATH}/${IMAGE_PATH}/${imageFileName}`))
-    //}
+        await response.body.pipe(fs.createWriteStream(`${PUBLIC_PATH}/${IMAGE_PATH}/${imageFileName}`))
+    }
 
     return `/${IMAGE_PATH}/${imageFileName}`;
 }
