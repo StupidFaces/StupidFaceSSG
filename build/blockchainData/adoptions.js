@@ -54,5 +54,15 @@ module.exports = {
         adoptionName: 'Beatrice',
         adopter: "LoafPickle",
         adopterAddress: "https://evil-tools.vercel.app/"
+    },
+    884265527: {
+        adoptionName: 'Bigoudi',
+        adopter: 'LionsWrinkle',
+        adopterAddress: "https://app.nf.domains/name/lionswrinkle.algo"
+    },
+    884247505: {
+        adoptionName: 'Pyro',
+        adopter: 'LionsWrinkle',
+        adopterAddress: "https://app.nf.domains/name/lionswrinkle.algo"
     }
 }
