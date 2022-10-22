@@ -15,6 +15,8 @@
     <meta property="og:locale" content="{{ site.locale }}"/>
     <meta property="og:site_name" content="{{ site.site_name }}"/>
     {% include 'layouts/webpack.njk' %}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="/myalgo.min.js" defer></script>
     {% if page.url == "/" %}
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <script>
@@ -29,11 +31,20 @@
             }
         </script>
     {% endif %}
+    {% block headscripts %}
+    {% endblock %}
 </head>
 
 <body class="antialiased w-full text-gray-700 bg-gray-50 h-full overflow-y-scroll font-itim">
 <div class="max-w-screen-lg px-3 mx-auto h-full grid template-rows-min-content ">
-    <div class="">
+    <div class="relative">
+        <div class="connect absolute right-0">
+            <button id="connect" onClick="onConnectClick(this)" class="bg-gray-500 text-white rounded my-2 py-2 px-5 transform hover:bg-gray-600 transition-all tracking-wider">Connect</button>
+            <div id="connect-submenu" class="bg-gray-300 rounded py-2 px-2 hidden">
+                <a href="/myface" class="block p-1 hover:text-gray-800">MyFace</a>
+                <a href="#" id="disconnect" onClick="onDisconnectClick(event)" class="block p-1 hover:text-gray-800">Disconnect</a>
+            </div>
+        </div>
         <div class="header">
             {% block title %}
                 {% if isHomepage %}
@@ -56,6 +67,11 @@
                 <li class="mr-6">
                     <a class="text-gray-700 border-none hover:text-gray-800" href="/">
                         Home
+                    </a>
+                </li>
+                <li class="mr-6">
+                    <a class="text-gray-700 border-none hover:text-gray-800" href="/myface">
+                        MyFace
                     </a>
                 </li>
                 <li class="mr-6">
@@ -126,7 +142,7 @@
     </div>
 
 
-
+    {% if false %}
     <script>
         function updateTimer() {
             var timer = document.getElementById("timer");
@@ -157,9 +173,49 @@
             }
         }
         setInterval('updateTimer()', 1000);
+    </script>
+    {% endif %}
 
+    <script>
+        async function onConnectClick(button) {
+            const isLoggedIn = window.localStorage.getItem('pubKey');
 
-        
+            if (isLoggedIn) {
+                const connectSubmenu = document.getElementById('connect-submenu');
+                connectSubmenu.classList.toggle('hidden');
+            } else {
+                const myAlgoConnect = new MyAlgoConnect();
+                const accounts = await myAlgoConnect.connect({ shouldSelectOneAccount: true });
+                const pubKey = accounts[0].address;
+
+                const pubKeyShort = pubKey.replace(pubKey.substring(4,54), "...");
+
+                window.localStorage.setItem('pubKey', pubKey);
+                window.localStorage.setItem('pubKeyShort', pubKeyShort);
+
+                button.innerHTML = pubKeyShort;
+            }
+        }
+
+        function onDisconnectClick(event) {
+            const connectSubmenu = document.getElementById('connect-submenu');
+            connectSubmenu.classList.add('hidden');
+            event.preventDefault();
+            window.localStorage.clear();
+            const connector = document.getElementById('connect');
+            connector.innerHTML = 'Connect';
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const pubKeyShort = window.localStorage.getItem('pubKeyShort');
+
+            if (pubKeyShort) {
+                const connector = document.getElementById('connect');
+                connector.innerHTML = pubKeyShort;
+            }
+
+        });
+
         document.addEventListener('keydown', (event) => {
             if (event.key === 'ArrowRight') {
                 window.location = "/{{pagination.next}}"

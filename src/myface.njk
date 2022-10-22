@@ -1,0 +1,82 @@
+---
+permalink: 'myface/index.html'
+title: MyFace
+---
+{% extends 'layouts/base.njk' %}
+
+{% block headscripts %}
+    <script src="/assets/js/algosdk.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="loader" class="h-full w-full grid items-center justify-center"><img class="animate-spin h-24 w-24 rounded-full" src="/logo800x800.png"></div>
+    
+    <div id="content" class="grid grid-cols-1 gap-4 md:grid-cols-3">
+        
+
+    </div>
+
+    <script>
+        const algoIndexer = new algosdk.Indexer('',"https://algoindexer.algoexplorerapi.io",'443');
+
+
+        document.addEventListener("DOMContentLoaded", async (event) => {
+            const loggedInPublicKey = window.localStorage.getItem('pubKey');
+            const loader = document.getElementById('loader');
+
+            if (!loggedInPublicKey) {
+                loader.innerHTML = "You're not connected.";
+                return;
+
+            }
+            const indexerResponse = await algoIndexer.lookupAccountCreatedAssets('KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q').limit(1000).do();
+            const stupidFaceAssets = indexerResponse['assets'];
+
+            const pubKeyAssets = await getHoldingNfts(loggedInPublicKey);
+
+            const holdedStupidFaceAssets = []
+            for (let stupidFaceAsset of stupidFaceAssets) {
+                if (stupidFaceAsset.deleted) continue;
+
+                if(pubKeyAssets.includes(stupidFaceAsset.index)) {
+                    holdedStupidFaceAssets.push({
+                        assetId: stupidFaceAsset.index,
+                        assetName: stupidFaceAsset.params.name,
+                        assetIpfs: stupidFaceAsset.params.url.split('/').at(-1)
+                    });
+                }
+            }
+            console.log(holdedStupidFaceAssets);
+            loader.classList.add('hidden');
+            renderFaces(holdedStupidFaceAssets);
+        });
+
+        function renderFaces(faces) {
+            contentNode = document.getElementById("content");
+
+            for (faceData of faces) {
+                contentNode.innerHTML += `
+                <div>
+                    <img src="/assets/faces/${faceData.assetIpfs}.png" />
+                    <h2>${faceData.assetName}<h2>
+                </div>
+                `
+            }
+        
+        }
+
+        async function getHoldingNfts(publicKey) {
+            const accountWrapper = await algoIndexer.lookupAccountAssets(publicKey).limit(10000).do();
+            const allAssets = accountWrapper['assets'];
+            const hodledAssets = [];
+            for (let asset of allAssets) {
+                if (asset.amount == 1) {
+                    hodledAssets.push(asset['asset-id']);
+                }
+            }
+            return hodledAssets;
+        }
+    </script>
+{% endblock %}
+
+

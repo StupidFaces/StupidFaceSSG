@@ -15,6 +15,11 @@ module.exports = function (eleventyConfig) {
         },
     });
 
+    eleventyConfig.addPassthroughCopy({
+        "./node_modules/algosdk/dist/browser/algosdk.min.js": "/assets/js/algosdk.min.js",
+        "./node_modules/algosdk/dist/browser/algosdk.min.js.map": "/assets/js/algosdk.min.js.map",
+    });
+
     eleventyConfig.setBrowserSyncConfig({
         files: './_site/assets/styles/main.css',
     });
