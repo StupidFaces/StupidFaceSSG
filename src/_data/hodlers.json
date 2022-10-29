@@ -127,7 +127,7 @@
     },
     {
         "publicKey": "5I36NJYX4QR34DSPYXOY3GN7KHA5GELYMOJFOAANLM6XZTQZ65KPOEERSY",
-        "hodleCount": 2,
+        "hodleCount": 3,
         "name": "AlexRoyHere",
         "profileImage": "/assets/hodlers/AlexRoyHere.png",
         "homepage": "https://twitter.com/AlexRoyHere"
@@ -155,7 +155,7 @@
     },
     {
         "publicKey": "LIONS6PJKO5GEIAW5IL2XANQLR6L3GJ4F75VUJN3Q53RJAID4PGJZQG4OU",
-        "hodleCount": 3,
+        "hodleCount": 2,
         "name": "lionswrinkle.algo",
         "profileImage": "/assets/hodlers/lionswrinkle_algo.png",
         "homepage": "https://app.nf.domains/name/lionswrinkle.algo"
@@ -166,6 +166,34 @@
         "name": "algoribbits.algo",
         "profileImage": "/assets/hodlers/algoribbits_algo.png",
         "homepage": "https://app.nf.domains/name/algoribbits.algo"
+    },
+    {
+        "publicKey": "KRDPYCCLXZEEPDWLW5HB77QMV5FYZQLTH5HHZZIKWWXDKPUA6FG4SHDDHE",
+        "hodleCount": 1,
+        "name": "godspeed.algo",
+        "profileImage": "/assets/hodlers/godspeed_algo.png",
+        "homepage": "https://app.nf.domains/name/godspeed.algo"
+    },
+    {
+        "publicKey": "PALGA7BCRT5OWSGVKHDYY2HP335EB3LL6I7PBUHN2AIS24YF5QN7UQBWBM",
+        "hodleCount": 1,
+        "name": "mancjester.algo",
+        "profileImage": "/assets/hodlers/mancjester_algo.png",
+        "homepage": "https://app.nf.domains/name/mancjester.algo"
+    },
+    {
+        "publicKey": "NOUARWMA7OKDQ4EZ2LMHSBSDNN52FCIJ4NW77TBC477NXBC2KBHBDJONJE",
+        "hodleCount": 1,
+        "name": "deputamadre.algo",
+        "profileImage": "/assets/hodlers/deputamadre_algo.png",
+        "homepage": "https://app.nf.domains/name/deputamadre.algo"
+    },
+    {
+        "publicKey": "NFTRDMUR6VQRV5M3DHMRF4ME2U3X44OTTCDIRPJB5LZIXGSW5MVMOZP5ME",
+        "hodleCount": 1,
+        "name": "nokuaru.algo",
+        "profileImage": "",
+        "homepage": "https://app.nf.domains/name/nokuaru.algo"
     },
     {
         "publicKey": "EE7CRFODWJDOXUVPVBIDYHKSRJHNZ4R3B6AKHBU5VRB5YBDXGVSZULEYIQ",
