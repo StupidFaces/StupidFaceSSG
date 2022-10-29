@@ -5,5 +5,56 @@
     "description": "The most Stupid Faces on Algorand",
     "url": "https://example.com",
     "locale": "en",
-    "author": "grex"
+    "author": "grex",
+    "menu": {
+        "main": [
+            {
+                "name": "Home",
+                "link": "/"
+            },
+            {
+                "name": "MyFace",
+                "link": "/myface"
+            },
+            {
+                "name": "Adopt",
+                "link": "/adopt"
+            },
+            {
+                "name": "Hodlers",
+                "link": "/hodlers"
+            },
+            {
+                "name": "About",
+                "link": "/about"
+
+            }
+        ],
+        "side": [
+            {
+                "title": "Stupid Faces on Twitter",
+                "href": "https://twitter.com/moststupidfaces",
+                "logoSrc": "/assets/images/twitter-logo.png",
+                "extraClass": "" 
+            },
+            {
+                "title": "Stupid Faces Discord Server",
+                "href": "https://discord.com/invite/XgjVCvBYs9",
+                "logoSrc": "/assets/images/discord-logo.png",
+                "extraClass": "" 
+            },
+            {
+                "title": "Stupid Faces on NFTExplorer",
+                "href": "https://www.nftexplorer.app/collection?creator=KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q",
+                "logoSrc": "/assets/images/nft-explorer-logo.png",
+                "extraClass": "rounded-3xl" 
+            },
+            {
+                "title": "Stupid Faces on Rand Gallery",
+                "href": "https://www.randgallery.com/algo-collection/?address=STFCJE356Y6S5DUWZWJ2VIRI37DYQ65OTDMJQVOT62NMOQ4BW2YADS5SFQ",
+                "logoSrc": "/assets/images/rand-logo.png",
+                "extraClass": "rand-logo rounded-3xl" 
+            }
+        ]
+    }
 }

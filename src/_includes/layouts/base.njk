@@ -64,58 +64,22 @@
         </div>
         <nav class="flex flex-wrap text-xl border-b border-gray-300 pb-0.5">
             <ul class="flex">
+                {% for menuItem in site.menu.main %}
                 <li class="mr-6">
-                    <a class="text-gray-700 border-none hover:text-gray-800" href="/">
-                        Home
+                    <a class="text-gray-700 border-none hover:text-gray-800" href="{{ menuItem.link }}">
+                        {{ menuItem.name }}
                     </a>
                 </li>
-                <li class="mr-6">
-                    <a class="text-gray-700 border-none hover:text-gray-800" href="/myface">
-                        MyFace
-                    </a>
-                </li>
-                <li class="mr-6">
-                    <a class="text-gray-700 border-none hover:text-gray-800" href="/adopt">
-                        Adopt
-                    </a>
-                </li>
-                <li class="mr-6">
-                    <a class="text-gray-700 border-none hover:text-gray-800" href="/hodlers">
-                        Hodlers
-                    </a>
-                </li>
-                <li class="mr-6">
-                    <a class="text-gray-700 border-none hover:text-gray-800" href="/about">
-                        About
-                    </a>
-                </li>
+                {% endfor %}
             </ul>
             <ul class="flex ml-auto">
+                {% for sideMenuItem in site.menu.side %}
                 <li class="mr-6 flex">
-                    <a class="flex items-center" title="Stupid Faces on Twitter" target="_blank" href="https://twitter.com/moststupidfaces">
-                        <img class="nav-icon h-5 w-5" src="/assets/images/twitter-logo.png">
+                    <a class="flex items-center" title="{{ sideMenuItem.title }}" target="_blank" href="{{ sideMenuItem.href }}">
+                        <img class="nav-icon h-5 w-5 {{ sideMenuItem.extraClass }}" src="{{ sideMenuItem.logoSrc }}">
                     </a>
                 </li>
-                <li class="mr-6 flex">
-                    <a class="flex items-center" title="Stupid Faces Discord Server" target="_blank" href="https://discord.com/invite/XgjVCvBYs9">
-                        <img class="nav-icon h-5 w-5" src="/assets/images/discord-logo.png">
-                    </a>
-                </li>
-                <!--li class="mr-6 flex">
-                    <a class="flex items-center" title="Stupid Faces on AB2 Gallery" target="_blank" href="https://ab2.gallery/u/stupid+faces">
-                        <img class="nav-icon h-5 w-5" src="/assets/images/ab2-logo.png">
-                    </a>
-                </li-->
-                <li class="mr-6 flex">
-                    <a class="flex items-center" title="Stupid Faces on NFTExplorer" target="_blank" href="https://www.nftexplorer.app/collection?creator=KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q">
-                        <img class="nav-icon rounded-3xl h-5 w-5" src="/assets/images/nft-explorer-logo.png">
-                    </a>
-                </li>
-                <li class="mr-6 flex">
-                    <a class="flex items-center" title="Stupid Faces on Rand Gallery" target="_blank" href="https://www.randgallery.com/algo-collection/?address=STFCJE356Y6S5DUWZWJ2VIRI37DYQ65OTDMJQVOT62NMOQ4BW2YADS5SFQ">
-                        <img class="nav-icon rand-logo rounded-3xl h-5 w-5 bg" src="/assets/images/rand-logo.png">
-                    </a>
-                </li>
+                {% endfor %}
             </ul>
         </nav>
     </div>
