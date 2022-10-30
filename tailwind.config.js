@@ -2,7 +2,6 @@ module.exports = {
     purge: ['./src/**/*.njk', './src/**/*.md'],
     safelist: [
         'rand-logo',
-        'rounded-3xl',
     ],
     theme: {
         fontFamily: {

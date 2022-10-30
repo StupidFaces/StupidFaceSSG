@@ -47,13 +47,14 @@
                 "title": "Stupid Faces on NFTExplorer",
                 "href": "https://www.nftexplorer.app/collection?creator=KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q",
                 "logoSrc": "/assets/images/nft-explorer-logo.png",
-                "extraClass": "rounded-3xl" 
+                "logoRounded": true
             },
             {
                 "title": "Stupid Faces on Rand Gallery",
                 "href": "https://www.randgallery.com/algo-collection/?address=STFCJE356Y6S5DUWZWJ2VIRI37DYQ65OTDMJQVOT62NMOQ4BW2YADS5SFQ",
                 "logoSrc": "/assets/images/rand-logo.png",
-                "extraClass": "rand-logo rounded-3xl" 
+                "logoRounded": true,
+                "extraClass": "rand-logo" 
             }
         ]
     }

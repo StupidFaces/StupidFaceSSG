@@ -138,7 +138,6 @@
 }
 
 .header {
-    height: 160px;
     display: grid;
     justify-content: center;
     align-items: center;

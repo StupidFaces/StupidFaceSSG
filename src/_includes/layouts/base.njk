@@ -36,7 +36,29 @@
 </head>
 
 <body class="antialiased w-full text-gray-700 bg-gray-50 h-full overflow-y-scroll font-itim">
-<div class="max-w-screen-lg px-3 mx-auto h-full grid template-rows-min-content ">
+
+<div id="overlayMenu" class="overlay h-full w-0 fixed z-40 left-0 top-0 overflow-hidden transition-all bg-gray-300">
+    <div class="overlayContent p-3 mt-12">
+        <ul class="block text-center">
+            {% for menuItem in site.menu.main %}
+                <li>
+                    <a class="text-gray-700 border-none hover:text-gray-800 text-2xl" href="{{ menuItem.link }}">
+                        {{ menuItem.name }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="flex justify-center mt-4">
+            {% for sideMenuItem in site.menu.side %}
+                <a class="p-2" title="{{ sideMenuItem.title }}" target="_blank" href="{{ sideMenuItem.href }}">
+                    <img class="nav-icon h-5 w-5 {{ "rounded-3xl" if sideMenuItem.logoRounded }} {{ sideMenuItem.extraClass }}" src="{{ sideMenuItem.logoSrc }}">
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div id="mainContentWrapper" class="max-w-screen-lg px-3 mx-auto h-full grid template-rows-min-content z-0">
     <div class="relative">
         <div class="connect absolute right-0">
             <button id="connect" onClick="onConnectClick(this)" class="bg-gray-500 text-white rounded my-2 py-2 px-5 transform hover:bg-gray-600 transition-all tracking-wider">Connect</button>
@@ -45,7 +67,16 @@
                 <a href="#" id="disconnect" onClick="onDisconnectClick(event)" class="block p-1 hover:text-gray-800">Disconnect</a>
             </div>
         </div>
-        <div class="header">
+
+        <div class="md:hidden absolute left-0 z-50">
+            <a id="mobileBurger" onClick="onBurgerClick(event)" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mt-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="header h-36 md:h-40">
             {% block title %}
                 {% if isHomepage %}
                     <h1 class="font-semibold text-3xl text-center text-gray-800 leading-8">
@@ -60,9 +91,9 @@
                     </h1>
                 {% endif %}
             {% endblock %}
-
         </div>
-        <nav class="flex flex-wrap text-xl border-b border-gray-300 pb-0.5">
+
+        <nav class="hidden md:flex flex-wrap text-xl border-b border-gray-300 pb-0.5">
             <ul class="flex">
                 {% for menuItem in site.menu.main %}
                 <li class="mr-6">
@@ -76,7 +107,7 @@
                 {% for sideMenuItem in site.menu.side %}
                 <li class="mr-6 flex">
                     <a class="flex items-center" title="{{ sideMenuItem.title }}" target="_blank" href="{{ sideMenuItem.href }}">
-                        <img class="nav-icon h-5 w-5 {{ sideMenuItem.extraClass }}" src="{{ sideMenuItem.logoSrc }}">
+                        <img class="nav-icon h-5 w-5 {{ "rounded-3xl" if sideMenuItem.logoRounded }} {{ sideMenuItem.extraClass }}" src="{{ sideMenuItem.logoSrc }}">
                     </a>
                 </li>
                 {% endfor %}
@@ -84,7 +115,7 @@
         </nav>
     </div>
 
-    <div class="mt-4 mb-16">
+    <div class="md:mt-4 mb-16">
         {% if false %}
             <a target="_blank" href="https://www.randgallery.com/algo-collection/?address=STFCJE356Y6S5DUWZWJ2VIRI37DYQ65OTDMJQVOT62NMOQ4BW2YADS5SFQ"
                class="flex bg-red-900 p-6 justify-center items-start text-stupid-primary mb-4 transform hover:scale-105 transition-all hover:shadow-lg">
@@ -168,6 +199,14 @@
             window.localStorage.clear();
             const connector = document.getElementById('connect');
             connector.innerHTML = 'Connect';
+        }
+
+        function onBurgerClick(event) {
+            event.preventDefault();
+            const overlayMenu = document.getElementById('overlayMenu');
+            const mainContentWrapper = document.getElementById('mainContentWrapper');
+            overlayMenu.classList.toggle('w-full');
+            mainContentWrapper.classList.toggle('overflow-hidden');
         }
 
         document.addEventListener('DOMContentLoaded', (event) => {
