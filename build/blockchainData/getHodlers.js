@@ -3,12 +3,13 @@ const https = require('https');
 const fetch = require('node-fetch');
 const algosdk = require('algosdk');
 const CUSTOM_HODLERS = require('./hodlersCustom.json');
-
+const mime = require('mime-types');
+const sharp = require('sharp');
 
 const algodClient = new algosdk.Algodv2('', 'https://node.algoexplorerapi.io/', 443);
 const OUT_FILE_PATH = 'src/_data/hodlers.json'
 const PUBLIC_PATH = 'public'
-const IMAGE_PATH = 'assets/hodlers'
+const IMAGE_PATH = 'assets/hodlers/_generated'
 const STUPID_ADDRESS = "KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q";
 const indexerClient = new algosdk.Indexer('', 'https://algoindexer.algoexplorerapi.io/', 443);
 
@@ -80,7 +81,7 @@ async function getNfdData(publicKey) {
 
 async function getNfdImage(nfdData) {
     let imageUrl = null;
-    const imageFileName = `${nfdData.name.replace('.','_')}.png`
+    const imageFileName = `${nfdData.name.replace('.', '_')}`
 
     if (nfdData.properties.verified && nfdData.properties.verified.avatar) {
         imageUrl = nfdData.properties.verified.avatar;
@@ -90,18 +91,47 @@ async function getNfdImage(nfdData) {
         imageUrl = nfdData.properties.userDefined.avatar
     }
 
+    console.log(`NFD ImageUrl: ${imageUrl}`)
+
     if (!imageUrl) return '';
 
     imageUrl = imageUrl.replace('ipfs://', 'https://ipfs.io/ipfs/');
 
-    const response = await fetch(imageUrl);
+    let response = await fetch(imageUrl);
 
-    if(response.status == 200) {
+    if (response.status == 200) {
         //Download image
-        await response.body.pipe(fs.createWriteStream(`${PUBLIC_PATH}/${IMAGE_PATH}/${imageFileName}`))
+        let contentType = response.headers.get("Content-Type");
+        let fileEnding = mime.extension(contentType);
+        console.log(`Content-Type: ${contentType}, fileEnding: ${fileEnding}`);
+
+        //exception if nfd is json (???)
+        if (contentType == 'application/json') {
+            const internalImageUrlResponse = await response.json();
+            const internalImageUrl = internalImageUrlResponse['image'].replace('ipfs://', 'https://ipfs.io/ipfs/');
+            response = await fetch(internalImageUrl);
+
+            if (response.status == 200) {
+                contentType = response.headers.get("Content-Type");
+                fileEnding = mime.extension(contentType);
+            }
+        }
+
+        const outFile = `${PUBLIC_PATH}/${IMAGE_PATH}/${imageFileName}.webp`;
+
+        const pipeline = sharp();
+        pipeline.resize(800, null, {withoutEnlargement: true}).toFile(outFile, (err) => {
+            if (err) {
+                console.error(err);
+            }
+        });
+
+        await response.body.pipe(pipeline);
+
+        return `/${IMAGE_PATH}/${imageFileName}.webp`;
     }
 
-    return `/${IMAGE_PATH}/${imageFileName}`;
+    return ''
 }
 
 

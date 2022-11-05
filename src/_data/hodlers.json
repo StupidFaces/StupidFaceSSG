@@ -3,21 +3,21 @@
         "publicKey": "S67L3TLT42GQAJG5JI4T3VQ7F46Y3BOZCHE4S53SGTNHRJJTQCNEXL5C2Y",
         "hodleCount": 1,
         "name": "1.algo",
-        "profileImage": "/assets/hodlers/1_algo.png",
+        "profileImage": "/assets/hodlers/_generated/1_algo.webp",
         "homepage": "https://app.nf.domains/name/1.algo"
     },
     {
         "publicKey": "PZAG4PDFUBMNLBVVL7WNRNP56ZXEUSYRNDQLX4I6TDTV43B3G7BTJIE5JQ",
         "hodleCount": 1,
         "name": "middledoug.algo",
-        "profileImage": "/assets/hodlers/middledoug_algo.png",
+        "profileImage": "/assets/hodlers/_generated/middledoug_algo.webp",
         "homepage": "https://app.nf.domains/name/middledoug.algo"
     },
     {
         "publicKey": "RXFBJEAJRX4BBBLNZHUCBWA6YAMQBZQ2YETYNWUQV35R2QMC2XRDVXVWIE",
         "hodleCount": 3,
         "name": "UFwOah",
-        "profileImage": "/assets/hodlers/3DwOah_05.png",
+        "profileImage": "/assets/hodlers/UFwOah.webp",
         "homepage": "https://ufwoah.space/"
     },
     {
@@ -31,35 +31,35 @@
         "publicKey": "SMPKBMTPRWTTMPBEC7G47QIIT26N5AFEJSS7PKS7BMM7MKR7WUDE7Q4QVY",
         "hodleCount": 1,
         "name": "mochanerd.algo",
-        "profileImage": "/assets/hodlers/mochanerd_algo.png",
+        "profileImage": "/assets/hodlers/_generated/mochanerd_algo.webp",
         "homepage": "https://app.nf.domains/name/mochanerd.algo"
     },
     {
         "publicKey": "LMDGOUWPZXLTCQUV3YRLJ6BV3RFNIWGZVENV7HDL4I5WKRKLIJK2PSHIBA",
         "hodleCount": 2,
         "name": "null.algo",
-        "profileImage": "/assets/hodlers/null_algo.png",
+        "profileImage": "/assets/hodlers/_generated/null_algo.webp",
         "homepage": "https://app.nf.domains/name/null.algo"
     },
     {
         "publicKey": "DCDNJXAKGRZV57NN7Y4NETYOPP4A2Q3SY3BPZWB2CF2YOWCNX6NHA5BSCQ",
         "hodleCount": 2,
         "name": "skidmarcus.algo",
-        "profileImage": "/assets/hodlers/skidmarcus_algo.png",
+        "profileImage": "/assets/hodlers/_generated/skidmarcus_algo.webp",
         "homepage": "https://app.nf.domains/name/skidmarcus.algo"
     },
     {
         "publicKey": "HL65SEX7ERMP25UJQ4JZ6MNRCDSBILTVFDGZJXL4HYT4VUCXPJ2RQBJLMI",
         "hodleCount": 2,
         "name": "irl.algo",
-        "profileImage": "/assets/hodlers/irl_algo.png",
+        "profileImage": "/assets/hodlers/_generated/irl_algo.webp",
         "homepage": "https://app.nf.domains/name/irl.algo"
     },
     {
         "publicKey": "BNYSETPFTL2657B5RCSW64A3M766GYBVRV5ALOM7F7LIRUZKBEOGF6YSO4",
         "hodleCount": 1,
         "name": "CryptoBunny",
-        "profileImage": "/assets/hodlers/CryptoBunny.png",
+        "profileImage": "/assets/hodlers/CryptoBunny.webp",
         "homepage": "https://twitter.com/CryptoBunnyNFT"
     },
     {
@@ -73,63 +73,70 @@
         "publicKey": "B7MRVJUBEBKGP4IK6LPW74CNK6FOWV5GTQBCVRLUDTSH6J2EPBIB42JICA",
         "hodleCount": 6,
         "name": "moonboy.algo",
-        "profileImage": "/assets/hodlers/moonboy_algo.png",
+        "profileImage": "/assets/hodlers/_generated/moonboy_algo.webp",
         "homepage": "https://app.nf.domains/name/moonboy.algo"
     },
     {
         "publicKey": "FUTU4WZ745JBR6R6Z7ORHUHUDJ3FML2XWGIQLF5LSFIE64DI37XPWZRU7Q",
         "hodleCount": 1,
         "name": "dhow",
-        "profileImage": "/assets/hodlers/dhow.jfif",
+        "profileImage": "/assets/hodlers/dhow.webp",
         "homepage": "https://dlinktree.com/dhowdao"
     },
     {
         "publicKey": "FHGOHXXYWYLGKJFGI6367FG34ZTSGW3KTODW7JAXDRKCGKW7ZK2UPK6GVE",
         "hodleCount": 1,
         "name": "argonaut5000.algo",
-        "profileImage": "/assets/hodlers/argonaut5000_algo.png",
+        "profileImage": "/assets/hodlers/_generated/argonaut5000_algo.webp",
         "homepage": "https://app.nf.domains/name/argonaut5000.algo"
     },
     {
         "publicKey": "WNHR5ASC3MLL5HXCJGKMCDZ2GY44UONQNUX7W73V4JX5UBMFCM7Y6ODVEM",
         "hodleCount": 3,
         "name": "poweredby.algo",
-        "profileImage": "/assets/hodlers/poweredby_algo.png",
+        "profileImage": "/assets/hodlers/_generated/poweredby_algo.webp",
         "homepage": "https://app.nf.domains/name/poweredby.algo"
     },
     {
         "publicKey": "EVRG3Y74VKU6UHOTSTTFJ65P34MN7746GL7HATPQOEAV3CPASGERAUPFGE",
         "hodleCount": 2,
         "name": "ari.algo",
-        "profileImage": "/assets/hodlers/ari_algo.png",
+        "profileImage": "/assets/hodlers/_generated/ari_algo.webp",
         "homepage": "https://app.nf.domains/name/ari.algo"
     },
     {
         "publicKey": "WX4GUTLAGP2CZ5YDJADD3PGJ3ILIXMYIIWKG7UUKT7T7DK24QLN65ULUPQ",
         "hodleCount": 1,
         "name": "Alnimator",
-        "profileImage": "/assets/hodlers/Alnimator.png",
+        "profileImage": "/assets/hodlers/Alnimator.webp",
         "homepage": "https://twitter.com/aLnimator"
+    },
+    {
+        "publicKey": "SM7KQ7CBFAJPZ6M72YJWUVDJKB6WVNG774264PGSLYU3J7R5Z3EWKSNL5Q",
+        "hodleCount": 1,
+        "name": "BennyNFTs",
+        "profileImage": "/assets/hodlers/BennyNFTs.webp",
+        "homepage": "https://twitter.com/BennyNFTs"
     },
     {
         "publicKey": "JVWW7RY2Z5LCFKUWWXDYEVYXVC6G2VMWBCQQWQTSHL4BERFOJCS7O4ZGPU",
         "hodleCount": 1,
         "name": "aunnaemeka.algo",
-        "profileImage": "/assets/hodlers/aunnaemeka_algo.png",
+        "profileImage": "",
         "homepage": "https://app.nf.domains/name/aunnaemeka.algo"
     },
     {
         "publicKey": "XQNZLJXCNG3234GSAPKKQGLE2TWQFDWXI63H2GNBHEDLYAMH5ZLEVBGL4M",
         "hodleCount": 1,
         "name": "pennycrayon.algo",
-        "profileImage": "/assets/hodlers/pennycrayon_algo.png",
+        "profileImage": "/assets/hodlers/_generated/pennycrayon_algo.webp",
         "homepage": "https://app.nf.domains/name/pennycrayon.algo"
     },
     {
         "publicKey": "5I36NJYX4QR34DSPYXOY3GN7KHA5GELYMOJFOAANLM6XZTQZ65KPOEERSY",
         "hodleCount": 3,
         "name": "AlexRoyHere",
-        "profileImage": "/assets/hodlers/AlexRoyHere.png",
+        "profileImage": "/assets/hodlers/AlexRoyHere.webp",
         "homepage": "https://twitter.com/AlexRoyHere"
     },
     {
@@ -143,49 +150,49 @@
         "publicKey": "KG6PYBGFUKRC5IXN74O4HD57ZFJGXUJA6Y6W7YZ3ZR25GNUU4RLFGPXVCE",
         "hodleCount": 1,
         "name": "1eyedwilly.algo",
-        "profileImage": "/assets/hodlers/1eyedwilly_algo.png",
+        "profileImage": "/assets/hodlers/_generated/1eyedwilly_algo.webp",
         "homepage": "https://app.nf.domains/name/1eyedwilly.algo"
     },
     {
         "publicKey": "O2ZPSV6NJC32ZXQ7PZ5ID6PXRKAWQE2XWFZK5NK3UFULPZT6OKIOROEAPU",
         "hodleCount": 1,
         "name": "loafpickle.algo",
-        "profileImage": "/assets/hodlers/loafpickle_algo.png",
+        "profileImage": "/assets/hodlers/_generated/loafpickle_algo.webp",
         "homepage": "https://app.nf.domains/name/loafpickle.algo"
     },
     {
         "publicKey": "LIONS6PJKO5GEIAW5IL2XANQLR6L3GJ4F75VUJN3Q53RJAID4PGJZQG4OU",
         "hodleCount": 2,
         "name": "lionswrinkle.algo",
-        "profileImage": "/assets/hodlers/lionswrinkle_algo.png",
+        "profileImage": "/assets/hodlers/_generated/lionswrinkle_algo.webp",
         "homepage": "https://app.nf.domains/name/lionswrinkle.algo"
     },
     {
         "publicKey": "ID5QKBRWOYU33VRYMH2LDQQIAYGZQGVGOKSVW2HKDZUSCGF74KQXXLEZ7A",
         "hodleCount": 1,
         "name": "algoribbits.algo",
-        "profileImage": "/assets/hodlers/algoribbits_algo.png",
+        "profileImage": "/assets/hodlers/_generated/algoribbits_algo.webp",
         "homepage": "https://app.nf.domains/name/algoribbits.algo"
     },
     {
         "publicKey": "KRDPYCCLXZEEPDWLW5HB77QMV5FYZQLTH5HHZZIKWWXDKPUA6FG4SHDDHE",
         "hodleCount": 1,
         "name": "godspeed.algo",
-        "profileImage": "/assets/hodlers/godspeed_algo.png",
+        "profileImage": "/assets/hodlers/_generated/godspeed_algo.webp",
         "homepage": "https://app.nf.domains/name/godspeed.algo"
     },
     {
         "publicKey": "PALGA7BCRT5OWSGVKHDYY2HP335EB3LL6I7PBUHN2AIS24YF5QN7UQBWBM",
         "hodleCount": 1,
         "name": "mancjester.algo",
-        "profileImage": "/assets/hodlers/mancjester_algo.png",
+        "profileImage": "/assets/hodlers/_generated/mancjester_algo.webp",
         "homepage": "https://app.nf.domains/name/mancjester.algo"
     },
     {
         "publicKey": "NOUARWMA7OKDQ4EZ2LMHSBSDNN52FCIJ4NW77TBC477NXBC2KBHBDJONJE",
         "hodleCount": 1,
         "name": "deputamadre.algo",
-        "profileImage": "/assets/hodlers/deputamadre_algo.png",
+        "profileImage": "/assets/hodlers/_generated/deputamadre_algo.webp",
         "homepage": "https://app.nf.domains/name/deputamadre.algo"
     },
     {
@@ -199,7 +206,7 @@
         "publicKey": "EE7CRFODWJDOXUVPVBIDYHKSRJHNZ4R3B6AKHBU5VRB5YBDXGVSZULEYIQ",
         "hodleCount": 1,
         "name": "quackquackbitches.algo",
-        "profileImage": "/assets/hodlers/quackquackbitches_algo.png",
+        "profileImage": "/assets/hodlers/_generated/quackquackbitches_algo.webp",
         "homepage": "https://app.nf.domains/name/quackquackbitches.algo"
     }
 ]

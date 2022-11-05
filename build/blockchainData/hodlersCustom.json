@@ -4,7 +4,7 @@
         "publicKey": "RXFBJEAJRX4BBBLNZHUCBWA6YAMQBZQ2YETYNWUQV35R2QMC2XRDVXVWIE",
         "hodleCount": "3",
         "hodleSince": "2021-11",
-        "logoLocal": "/assets/hodlers/3DwOah_05.png",
+        "logoLocal": "/assets/hodlers/UFwOah.webp",
         "homepage": "https://ufwoah.space/"
     },
     {
@@ -12,7 +12,7 @@
         "publicKey": "BNYSETPFTL2657B5RCSW64A3M766GYBVRV5ALOM7F7LIRUZKBEOGF6YSO4",
         "hodleCount": "1",
         "hodleSince": "2021-10-08",
-        "logoLocal": "/assets/hodlers/CryptoBunny.png",
+        "logoLocal": "/assets/hodlers/CryptoBunny.webp",
         "logoIpfs": "QmfY8KDYSuNeAq46NQzwojTkQy6yNRBNJS6rpdXpKtH7rB",
         "homepage": "https://twitter.com/CryptoBunnyNFT"
     },
@@ -21,7 +21,7 @@
         "publicKey": "FUTU4WZ745JBR6R6Z7ORHUHUDJ3FML2XWGIQLF5LSFIE64DI37XPWZRU7Q",
         "hodleCount": "1",
         "hodleSince": "2021-10-16",
-        "logoLocal": "/assets/hodlers/dhow.jfif",
+        "logoLocal": "/assets/hodlers/dhow.webp",
         "logoIpfs": "QmTssSsDc2TQDsnkS6UUZrjrQ4L89hoQZvsnbyTRnCoQUV",
         "homepage": "https://dlinktree.com/dhowdao"
     },
@@ -44,7 +44,7 @@
         "publicKey": "WX4GUTLAGP2CZ5YDJADD3PGJ3ILIXMYIIWKG7UUKT7T7DK24QLN65ULUPQ",
         "hodleCount": "1",
         "hodleSince": "2021-11-13",
-        "logoLocal": "/assets/hodlers/Alnimator.png",
+        "logoLocal": "/assets/hodlers/Alnimator.webp",
         "homepage": "https://twitter.com/aLnimator"
     },
     {
@@ -84,9 +84,10 @@
     },
     {
         "name": "BennyNFTs",
+        "publicKey": "SM7KQ7CBFAJPZ6M72YJWUVDJKB6WVNG774264PGSLYU3J7R5Z3EWKSNL5Q",
         "hodleCount": "1",
         "hodleSince": "2021-11-21",
-        "logoLocal": "/assets/hodlers/BennyNFTs.png",
+        "logoLocal": "/assets/hodlers/BennyNFTs.webp",
         "homepage": "https://twitter.com/BennyNFTs"
     },
     {
@@ -97,18 +98,11 @@
         "homepage": "https://twitter.com/simi_nft"
     },
     {
-        "name": "Penny Crayon NFTs",
-        "hodleCount": "1",
-        "hodleSince": "2021-12-11",
-        "logoLocal": "/assets/hodlers/PennyCrayonNFTs.png",
-        "homepage": "https://twitter.com/PennyCrayonNFTs"
-    },
-    {
         "name": "AlexRoyHere",
         "publicKey": "5I36NJYX4QR34DSPYXOY3GN7KHA5GELYMOJFOAANLM6XZTQZ65KPOEERSY",
         "hodleCount": "1",
         "hodleSince": "2021-12-15",
-        "logoLocal": "/assets/hodlers/AlexRoyHere.png",
+        "logoLocal": "/assets/hodlers/AlexRoyHere.webp",
         "homepage": "https://twitter.com/AlexRoyHere"
 
     }
