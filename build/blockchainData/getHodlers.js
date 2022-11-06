@@ -51,6 +51,12 @@ async function main() {
             parsedHodler.name = nfdData.name;
             parsedHodler.homepage = `https://app.nf.domains/name/${nfdData.name}`;
             parsedHodler.profileImage = await getNfdImage(nfdData);
+
+            const existinNfdgHodler = parsedHodlers.filter(hodler => hodler.name == nfdData.name)[0];
+            if(existinNfdgHodler) {
+                existinNfdgHodler.hodleCount += 1;
+                continue;
+            }
         } else if (customData) {
             console.log(customData)
             parsedHodler.name = customData.name;
