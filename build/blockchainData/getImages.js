@@ -1,38 +1,37 @@
 const fs = require('fs');
 const https = require('https');
 const algosdk = require('algosdk');
-const { Pool } = require('pg');
 const ADOPTIONS = require('./adoptions');
+const fetch = require('node-fetch');
 
 if (process.env.NODE_ENV == 'development') {
     require("dotenv").config({path: `.${process.env.NODE_ENV}.env`});
 }
 
-const pgPool = new Pool({
-    connectionString: process.env.DB_CONNECTION_STRING,
-    ssl: { rejectUnauthorized: false }
-})
+console.info(`API_BASE_URL: ${process.env.API_BASE_URL}`)
 
 
 const algodClient = new algosdk.Algodv2('', 'https://node.algoexplorerapi.io/', 443);
-const imageOutFolder = 'public/assets/faces'
-const markdownOutFolder = 'src/faces'
-const address = "KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q";
 const indexerClient = new algosdk.Indexer('', 'https://algoindexer.algoexplorerapi.io/', 443);
 
+const IMAGE_OUT_FOLDER = 'public/assets/faces'
+const MARKDOWN_OUT_FOLDER = 'src/faces'
+const STUPID_ADDRESS = "KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q";
+const FACE_OF_THE_MONTH_ENDPOINT = 'faceofthemonths'
+
+let faceOftheMonths;
 
 async function main() {
     const healtState = await indexerClient.makeHealthCheck().do();
-    const accountInfo = await algodClient.accountInformation(address).do();
+    const accountInfo = await algodClient.accountInformation(STUPID_ADDRESS).do();
     const createdAssets = accountInfo['created-assets'];
+    faceOftheMonths = await getFaceOfTheMonths();
 
     for (let asset of createdAssets) {
         const assetUrl = asset['params']['url'];
         const assetId = asset['index'];
         const assetIpfsHash = assetUrl.split('/').at(-1);
         downloadImage(assetIpfsHash);
-        //let assetInfo = await indexerClient.searchForAssets().index(assetId).do();
-        //let assetTxs = await indexerClient.lookupAssetTransactions(884254614).do();
         
         await syncMarkdown(assetId, assetIpfsHash);
     }
@@ -47,8 +46,6 @@ async function syncMarkdown(assetId, assetIpfsHash) {
     const assetBlock = await indexerClient.lookupBlock(assetInfo['asset']['created-at-round']).do();
     const assetTimestamp = assetBlock['timestamp'];
 
-    const faceOfTheMonthDates = await getFaceOfTheMonthDates(assetId)
-
     const templateData = {
         title: assetName,
         asaId: assetId,
@@ -56,16 +53,16 @@ async function syncMarkdown(assetId, assetIpfsHash) {
         ipfs: assetIpfsHash,
         description: assetName,
         date: new Date(assetTimestamp * 1e3).toISOString().split('.')[0] + 'Z',
-        faceOfTheMonth: renderFaceOfTheMonthDates(faceOfTheMonthDates),
+        faceOfTheMonth: renderFaceOfTheMonthDates(assetId),
         adoptionName: ADOPTIONS[assetId] && ADOPTIONS[assetId]['adoptionName'],
         adopter: ADOPTIONS[assetId] && ADOPTIONS[assetId]['adopter'],
         adopterAddress: ADOPTIONS[assetId] && ADOPTIONS[assetId]['adopterAddress']
     }
 
     const renderedTemplate = render(templateData);
-    fs.writeFile(`${markdownOutFolder}/${fileName}`, renderedTemplate, (err) => {
+    fs.writeFile(`${MARKDOWN_OUT_FOLDER}/${fileName}`, renderedTemplate, (err) => {
         if (err) return console.log(err);
-        console.log(`${renderedTemplate} > ${markdownOutFolder}/${fileName}`);
+        console.log(`${renderedTemplate} > ${MARKDOWN_OUT_FOLDER}/${fileName}`);
     })
 }
 
@@ -76,7 +73,7 @@ function downloadImage(ipfsHash) {
             console.log(`Retrying: ${ipfsHash}`)
             downloadImage(ipfsHash)
         } else {
-            res.pipe(fs.createWriteStream(`${imageOutFolder}/${ipfsHash}.png`));
+            res.pipe(fs.createWriteStream(`${IMAGE_OUT_FOLDER}/${ipfsHash}.png`));
         }
     });
 }
@@ -94,27 +91,26 @@ function render(data) {
     return filtered;
 }
 
-async function getFaceOfTheMonthDates(assetId) {
-    const connection = await pgPool.connect();
-    const querySQL = `SELECT month_year FROM ${process.env.FACE_OF_THE_MONTH_TABLE} WHERE asset_id=${assetId}`;
+async function getFaceOfTheMonths() {
+    const response = await fetch(`${process.env.API_BASE_URL}/${FACE_OF_THE_MONTH_ENDPOINT}`);
 
-    try {
-        result = await pgPool.query(querySQL);
-        return result.rows;
-    } catch (error) {
-        console.error(error)
-    } finally {
-        connection.release()
+    if (response.status == 200) {
+        const data = await response.text();
+        return JSON.parse(data);
+    } else {
+        throw new Error(`Could not reach API: ${process.env.API_BASE_URL}/${FACE_OF_THE_MONTH_ENDPOINT}`)
     }
 }
 
-function renderFaceOfTheMonthDates(faceOfTheMonthDates) {
-    if (faceOfTheMonthDates.length < 1) return '';
+function renderFaceOfTheMonthDates(assetId) {
+    const faceOfTheMonthDates = faceOftheMonths.filter(face => face.assetId == assetId)[0]
+
+    if (!faceOfTheMonthDates) return '';
 
     let outString ='\n';
 
-    for (let faceOfTheMonthDate of faceOfTheMonthDates) {
-        outString += `    - ${faceOfTheMonthDate.month_year.slice(0,7)}\n`;
+    for (let faceOfTheMonthDate of faceOfTheMonthDates.fotmWins) {
+        outString += `    - ${faceOfTheMonthDate.monthYear.slice(0,7)}\n`;
     }
     return outString.trimEnd();
 }

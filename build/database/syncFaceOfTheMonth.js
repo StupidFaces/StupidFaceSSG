@@ -4,7 +4,6 @@ const faceOfTheMonths = require('./faceOfTheMonth')
 
 const pgPool = new Pool({
     connectionString: process.env.DB_CONNECTION_STRING,
-    ssl: { rejectUnauthorized: false }
 })
 
 async function main() {
@@ -22,7 +21,7 @@ async function main() {
 
 async function persist(assetId, monthYear, owner) {
     const connection = await pgPool.connect();
-    const insertSql = `INSERT INTO ${process.env.FACE_OF_THE_MONTH_TABLE}(asset_id, month_year, hodler_public_key) VALUES($1, $2, $3)`;
+    const insertSql = `INSERT INTO face_of_the_month(asset_id, month_year, hodler_public_key) VALUES($1, $2, $3)`;
 
     const values = [
         assetId,
