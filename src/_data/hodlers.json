@@ -21,6 +21,13 @@
         "homepage": "https://ufwoah.space/"
     },
     {
+        "publicKey": "U37ADYTVK5D7JBDITS56WOIVY4O7M2ZQZCXWBGBLYBXX27WSFPSI4N2PNI",
+        "hodleCount": 1,
+        "name": "papajams.algo",
+        "profileImage": "",
+        "homepage": "https://app.nf.domains/name/papajams.algo"
+    },
+    {
         "publicKey": "37N5UOHK7V6BVNTRBEZ5WGAFOHPSQY2SCSD2LIGMLTXWX2Y7J4VRECSF3A",
         "hodleCount": 1,
         "name": "everglades.algo",
@@ -180,13 +187,6 @@
         "name": "godspeed.algo",
         "profileImage": "/assets/hodlers/_generated/godspeed_algo.webp",
         "homepage": "https://app.nf.domains/name/godspeed.algo"
-    },
-    {
-        "publicKey": "PALGA7BCRT5OWSGVKHDYY2HP335EB3LL6I7PBUHN2AIS24YF5QN7UQBWBM",
-        "hodleCount": 1,
-        "name": "mancjester.algo",
-        "profileImage": "/assets/hodlers/_generated/mancjester_algo.webp",
-        "homepage": "https://app.nf.domains/name/mancjester.algo"
     },
     {
         "publicKey": "NOUARWMA7OKDQ4EZ2LMHSBSDNN52FCIJ4NW77TBC477NXBC2KBHBDJONJE",
