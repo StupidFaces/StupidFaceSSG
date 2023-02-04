@@ -7,4 +7,5 @@ description: "Stupid Face #38"
 date: 2021-11-07T12:05:00Z
 faceOfTheMonth:
     - 2022-08
+    - 2023-02
 ---

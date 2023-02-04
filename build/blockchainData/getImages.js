@@ -68,13 +68,17 @@ async function syncMarkdown(assetId, assetIpfsHash) {
 
 function downloadImage(ipfsHash) {
     https.get(`https://ipfs.io/ipfs/${ipfsHash}`, (res) => {
-        console.log(res.statusCode);
-        if (res.statusCode != 200) {
+        console.log(`Status: ${res.statusCode} - IpfsHash: ${ipfsHash}`);
+
+        if (res.statusCode == 200) {
+            res.pipe(fs.createWriteStream(`${IMAGE_OUT_FOLDER}/${ipfsHash}.png`))
+        } else {
             console.log(`Retrying: ${ipfsHash}`)
             downloadImage(ipfsHash)
-        } else {
-            res.pipe(fs.createWriteStream(`${IMAGE_OUT_FOLDER}/${ipfsHash}.png`));
         }
+    }).on('error', error => {
+        console.info(`Problems with creating write stream: ${error}`);
+        downloadImage(ipfsHash);
     });
 }
 
