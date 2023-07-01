@@ -11,7 +11,7 @@ const OUT_FILE_PATH = 'src/_data/hodlers.json'
 const PUBLIC_PATH = 'public'
 const IMAGE_PATH = 'assets/hodlers/_generated'
 const STUPID_ADDRESS = "KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q";
-const indexerClient = new algosdk.Indexer('', 'https://algoindexer.algoexplorerapi.io/', 443);
+const indexerClient = new algosdk.Indexer('', 'https://mainnet-idx.algonode.network', 443);
 
 
 let hodlers = {};
