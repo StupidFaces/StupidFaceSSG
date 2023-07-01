@@ -11,8 +11,8 @@ if (process.env.NODE_ENV == 'development') {
 console.info(`API_BASE_URL: ${process.env.API_BASE_URL}`)
 
 
-const algodClient = new algosdk.Algodv2('', 'https://node.algoexplorerapi.io/', 443);
-const indexerClient = new algosdk.Indexer('', 'https://mainnet-idx.algonode.network', 443);
+const algodClient = new algosdk.Algodv2('', 'https://mainnet-api.algonode.cloud', 443);
+const indexerClient = new algosdk.Indexer('', 'https://mainnet-idx.algonode.cloud', 443);
 
 const IMAGE_OUT_FOLDER = 'public/assets/faces'
 const MARKDOWN_OUT_FOLDER = 'src/faces'

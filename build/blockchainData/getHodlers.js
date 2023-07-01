@@ -6,12 +6,12 @@ const CUSTOM_HODLERS = require('./hodlersCustom.json');
 const mime = require('mime-types');
 const sharp = require('sharp');
 
-const algodClient = new algosdk.Algodv2('', 'https://node.algoexplorerapi.io/', 443);
+const algodClient = new algosdk.Algodv2('', 'https://mainnet-api.algonode.cloud', 443);
 const OUT_FILE_PATH = 'src/_data/hodlers.json'
 const PUBLIC_PATH = 'public'
 const IMAGE_PATH = 'assets/hodlers/_generated'
 const STUPID_ADDRESS = "KKBVJLXALCENRXQNEZC44F4NQWGIEFKKIHLDQNBGDHIM73F44LAN7IAE5Q";
-const indexerClient = new algosdk.Indexer('', 'https://mainnet-idx.algonode.network', 443);
+const indexerClient = new algosdk.Indexer('', 'https://mainnet-idx.algonode.cloud', 443);
 
 
 let hodlers = {};
