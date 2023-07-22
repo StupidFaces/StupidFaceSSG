@@ -64,5 +64,9 @@ module.exports = {
         adoptionName: 'Pyro',
         adopter: 'LionsWrinkle',
         adopterAddress: "https://app.nf.domains/name/lionswrinkle.algo"
+    },
+    897229327: {
+        adoptionName: "Happy 69",
+        adopter: "Paul"
     }
 }
