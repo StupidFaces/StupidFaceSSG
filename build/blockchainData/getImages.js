@@ -31,7 +31,7 @@ async function main() {
         const assetUrl = asset['params']['url'];
         const assetId = asset['index'];
         const assetIpfsHash = assetUrl.split('/').at(-1);
-        downloadImage(assetIpfsHash);
+        downloadImage(assetIpfsHash, assetId);
         
         await syncMarkdown(assetId, assetIpfsHash);
     }
@@ -66,19 +66,21 @@ async function syncMarkdown(assetId, assetIpfsHash) {
     })
 }
 
-function downloadImage(ipfsHash) {
-    https.get(`https://${ipfsHash}.ipfs.dweb.link`, (res) => {
+function downloadImage(ipfsHash, assetId) {
+    const downloadUrl = `https://${ipfsHash}.ipfs.dweb.link`;
+    
+    https.get(downloadUrl, (res) => {
         console.log(`Status: ${res.statusCode} - IpfsHash: ${ipfsHash}`);
 
         if (res.statusCode == 200) {
-            res.pipe(fs.createWriteStream(`${IMAGE_OUT_FOLDER}/${ipfsHash}.png`))
+            res.pipe(fs.createWriteStream(`${IMAGE_OUT_FOLDER}/${ipfsHash}.png`));
         } else {
-            console.log(`Retrying: ${ipfsHash}`)
-            downloadImage(ipfsHash)
+            console.log(`Retrying AssetId ${assetId}: ${downloadUrl}`);
+            downloadImage(ipfsHash, assetId);
         }
     }).on('error', error => {
         console.info(`Problems with creating write stream: ${error}`);
-        downloadImage(ipfsHash);
+        downloadImage(ipfsHash, assetId);
     });
 }
 
