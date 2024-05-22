@@ -66,17 +66,18 @@ async function syncMarkdown(assetId, assetIpfsHash) {
     })
 }
 
-function downloadImage(ipfsHash, assetId) {
-    const downloadUrl = `https://${ipfsHash}.ipfs.dweb.link`;
+function downloadImage(ipfsHash, assetId, downloadUrl) {
+    const downloadUrlIpfsIo = `https://ipfs.io/ipfs/${ipfsHash}`;
+    const downloadUrlDweb = `https://${ipfsHash}.ipfs.dweb.link`;
     
-    https.get(downloadUrl, (res) => {
+    https.get((downloadUrl || downloadUrlIpfsIo), (res) => {
         console.log(`Status: ${res.statusCode} - IpfsHash: ${ipfsHash}`);
 
         if (res.statusCode == 200) {
             res.pipe(fs.createWriteStream(`${IMAGE_OUT_FOLDER}/${ipfsHash}.png`));
         } else {
             console.log(`Retrying AssetId ${assetId}: ${downloadUrl}`);
-            downloadImage(ipfsHash, assetId);
+            downloadImage(ipfsHash, assetId, downloadUrlDweb);
         }
     }).on('error', error => {
         console.info(`Problems with creating write stream: ${error}`);
