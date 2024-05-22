@@ -67,7 +67,7 @@ async function syncMarkdown(assetId, assetIpfsHash) {
 }
 
 function downloadImage(ipfsHash) {
-    https.get(`https://ipfs.io/ipfs/${ipfsHash}`, (res) => {
+    https.get(`https://${ipfsHash}.ipfs.dweb.link`, (res) => {
         console.log(`Status: ${res.statusCode} - IpfsHash: ${ipfsHash}`);
 
         if (res.statusCode == 200) {
