@@ -33,7 +33,7 @@ async function main() {
         const assetIpfsHash = assetUrl.split('/').at(-1);
         downloadImage(assetIpfsHash, assetId);
         
-        // await syncMarkdown(assetId, assetIpfsHash);
+        await syncMarkdown(assetId, assetIpfsHash);
     }
 
 }
