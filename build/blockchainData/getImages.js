@@ -67,7 +67,8 @@ async function syncMarkdown(assetId, assetIpfsHash) {
 }
 
 function downloadImage(ipfsHash, assetId) {
-    const downloadUrl = `https://ipfs.algonode.xyz/ipfs/${ipfsHash}`;
+    const downloadUrl = `https://ipfs-pera.algonode.dev/ipfs/${ipfsHash}`;
+    // const downloadUrl = `https://ipfs.algonode.xyz/ipfs/${ipfsHash}`;
     // const downloadUrlIpfsIo = `https://ipfs.io/ipfs/${ipfsHash}`;
     // const downloadUrlDweb = `https://${ipfsHash}.ipfs.dweb.link`;
     
